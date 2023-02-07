@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/npm/dt/@erfanetoon/react-tailwind-ui.svg" alt="Total Downloads">
   </a> -->
   <a href="https://github.com/erfanetoon/react-tailwind-ui/releases">
-    <img src="https://img.shields.io/badge/version-0.0.1-blue.svg" alt="Version" />
+    <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version" />
   </a>
 </p>
 

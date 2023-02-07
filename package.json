@@ -1,6 +1,6 @@
 {
     "name": "@erfanetoon/react-tailwind-ui",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "types": "index.d.ts",
@@ -20,7 +20,7 @@
     "author": "erfanetoon",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/erfanetoon/react-tailwind-ui/issues"
+        "url": "https://github.com/erfanetoon/react-tailwindnpm -ui/issues"
     },
     "homepage": "https://github.com/erfanetoon/react-tailwind-ui#readme",
     "dependencies": {
