@@ -73,3 +73,32 @@ export default function Example() {
 ```
 
 <br />
+<br />
+
+### Breakpoints
+
+</br>
+
+We add new breakpoint size as `xs`, this will help you to handle responsive design better
+
+```jsx
+    xs: "480px",
+    sm: "640px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+    "2xl": "1536px",
+```
+
+You can override it values in `tailwind.config.js`
+
+```jsx
+    theme: {
+        boxShadow: shadows.default,
+        colors: colors.default,
+        fontSize: fontSizes.default,
+        screens: {
+          // your breakpoints
+        },
+    },
+```
