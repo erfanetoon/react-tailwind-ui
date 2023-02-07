@@ -18,7 +18,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
             loading,
             loadingIcon,
             icon,
-            iconPosition,
+            iconPosition = "start",
             className,
             classNames,
             children,
@@ -46,7 +46,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
                 ref={ref}
                 className={twMerge(
                     [
-                        "inline-flex items-center justify-center cursor-pointer border font-medium",
+                        "inline-flex items-center justify-center cursor-pointer border font-medium align-middle",
                         "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
                         fullWidth ? "w-full" : "",
                         global.borderRadius,
@@ -80,7 +80,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
                     return typeof onMouseDown === "function" && onMouseDown(e);
                 }}
             >
-                {!!icon && iconPosition === "start" && (
+                {!loading && !!icon && iconPosition === "start" && (
                     <div className={twMerge("me-2", classNames?.icon)}>
                         {icon}
                     </div>
@@ -99,7 +99,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
                     children
                 )}
 
-                {!!icon && iconPosition === "end" && (
+                {!loading && !!icon && iconPosition === "end" && (
                     <div className={twMerge("ms-2", classNames?.icon)}>
                         {icon}
                     </div>
