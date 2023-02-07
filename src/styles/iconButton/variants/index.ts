@@ -6,7 +6,7 @@ import Gradient from "./gradient";
 import OutlinedFilled from "./outlined_filled";
 import { IconButtonThemeProps } from "src/components/iconButton/types";
 
-const ButtonVariants: Record<
+const IconButtonVariants: Record<
     IconButtonThemeProps["variant"],
     Record<Colors, Record<string, string>>
 > = {
@@ -17,4 +17,4 @@ const ButtonVariants: Record<
     outlined_filled: OutlinedFilled,
 };
 
-export default ButtonVariants;
+export default IconButtonVariants;

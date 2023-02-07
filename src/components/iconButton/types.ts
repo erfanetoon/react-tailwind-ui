@@ -14,6 +14,5 @@ export interface IconButtonProps extends ComponentProps<"button"> {
     classNames?: {
         button?: string;
         loading?: string;
-        icon?: string;
     };
 }
