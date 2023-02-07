@@ -53,7 +53,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
     <React.StrictMode>
-        <ThemeProvider>
+        <ThemeProvider global={{}}>
             <App />
         </ThemeProvider>
     </React.StrictMode>,
@@ -72,33 +72,130 @@ export default function Example() {
 }
 ```
 
-<br />
+```jsx
+import { IconButton } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <IconButton>IconButton</IconButton>;
+}
+```
+
+```jsx
+import { Chip } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <Chip>Chip</Chip>;
+}
+```
+
 <br />
 
-### Breakpoints
+## Colors
 
-</br>
+Our color palette is same as tailwindcss - <a href="https://tailwindcss.com/docs/customizing-colors" target="_blank">Tailwind CSS Colors.</a>, we use `blue` as our default color in all component, you can change it in themeProvider global object
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { ThemeProvider } from "@erfanetoon/react-tailwind-ui";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+    <React.StrictMode>
+        <ThemeProvider
+            global={{
+                color: "red",
+            }}
+        >
+            <App />
+        </ThemeProvider>
+    </React.StrictMode>,
+);
+```
+
+<br />
+
+## Breakpoints
 
 We add new breakpoint size as `xs`, this will help you to handle responsive design better
 
 ```jsx
-    xs: "480px",
-    sm: "640px",
-    md: "768px",
-    lg: "1024px",
-    xl: "1280px",
-    "2xl": "1536px",
+xs: "480px",
+sm: "640px",
+md: "768px",
+lg: "1024px",
+xl: "1280px",
+"2xl": "1536px",
 ```
 
-You can override it values in `tailwind.config.js`
+You can override screens in `tailwind.config.js`
 
 ```jsx
-    theme: {
-        boxShadow: shadows.default,
-        colors: colors.default,
-        fontSize: fontSizes.default,
-        screens: {
-          // your breakpoints
-        },
+theme: {
+    screens: {
+      // your values
     },
+},
+```
+
+<br />
+
+## Font Sizes
+
+We define new font size values
+
+```jsx
+xs: ["0.625rem", "0.75rem"],
+sm: ["0.75rem", "1rem"],
+base: ["0.875rem", "1.25rem"],
+lg: ["1rem", "1.5rem"],
+xl: ["1.125rem", "1.75rem"],
+"2xl": ["1.25rem", "1.75rem"],
+"3xl": ["1.5rem", "2rem"],
+"4xl": ["1.875rem", "2.25rem"],
+"5xl": ["2.25rem", "2.5rem"],
+"6xl": ["3rem", "1rem"],
+"7xl": ["3.75rem", "1rem"],
+"8xl": ["4.5rem", "1rem"],
+"9xl": ["6rem", "1rem"],
+"10xl": ["8rem", "1rem"],
+```
+
+You can override fontSize in `tailwind.config.js`
+
+```jsx
+theme: {
+    fontSize: {
+      // your values
+    },
+},
+```
+
+<br />
+
+## Box Shadows
+
+We define new box shadow values
+
+```jsx
+sm: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+DEFAULT: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+lg: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+xl: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+"2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+inner: "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+none: "0 0 rgb(0, 0 / 0, 0)",
+```
+
+You can override boxShadow in `tailwind.config.js`
+
+```jsx
+theme: {
+    boxShadow: {
+      // your values
+    },
+},
 ```
