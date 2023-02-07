@@ -3,7 +3,7 @@ import { ButtonThemeProps } from "../components/button/types";
 
 export interface ThemeContext {
     global: {
-        color: Colors;
+        color?: Colors;
         transition?: string;
         borderRadius?: string;
     };
