@@ -13,4 +13,11 @@ export const DefaultValue: ThemeContext = {
             size: "md",
         },
     },
+    iconButton: {
+        defaultProps: {
+            variant: "filled",
+            ripple: true,
+            size: "md",
+        },
+    },
 };

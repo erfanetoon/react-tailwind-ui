@@ -1,25 +1,22 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { useTheme } from "../../context";
-import ButtonSizes from "../../styles/button/sizes";
-import ButtonVariants from "../../styles/button/variants";
-import { ButtonProps, ButtonThemeProps } from "./types";
+import ButtonSizes from "../../styles/iconButton/sizes";
+import ButtonVariants from "../../styles/iconButton/variants";
+import { IconButtonProps, IconButtonThemeProps } from "./types";
 import Ripple from "material-ripple-effects";
 
-type Props = ButtonProps & ButtonThemeProps;
+type Props = IconButtonProps & IconButtonThemeProps;
 
-export const Button = React.forwardRef<HTMLButtonElement, Props>(
+export const IconButton = React.forwardRef<HTMLButtonElement, Props>(
     (
         {
             variant,
             size,
             color,
             ripple,
-            fullWidth,
             loading,
             loadingIcon,
-            icon,
-            iconPosition = "start",
             className,
             classNames,
             children,
@@ -27,12 +24,12 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
         },
         ref,
     ) => {
-        const { global, button: ThemeButton } = useTheme();
+        const { global, iconButton: ThemeIconButton } = useTheme();
 
         color = color ?? global?.color;
-        variant = variant ?? ThemeButton?.defaultProps?.variant;
-        size = size ?? ThemeButton?.defaultProps?.size;
-        ripple = ripple ?? ThemeButton?.defaultProps?.ripple;
+        variant = variant ?? ThemeIconButton?.defaultProps?.variant;
+        size = size ?? ThemeIconButton?.defaultProps?.size;
+        ripple = ripple ?? ThemeIconButton?.defaultProps?.ripple;
 
         const rippleEffect = ripple !== undefined && new Ripple();
 
@@ -49,18 +46,17 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
                     [
                         "inline-flex items-center justify-center cursor-pointer border font-medium align-middle",
                         "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
-                        fullWidth ? "w-full" : "",
                         global.borderRadius,
                         global.transition,
-                        ThemeButton?.styles?.base || "",
+                        ThemeIconButton?.styles?.base || "",
                         sizeStyles,
-                        ThemeButton?.styles?.sizes[size] || "",
+                        ThemeIconButton?.styles?.sizes[size] || "",
                     ].join(" "),
                     Object.values(variantStyles)
                         .map((item) => item)
                         .join(" "),
-                    ThemeButton?.styles?.variants[variant] || "",
-                    ThemeButton?.styles?.variants[color] || "",
+                    ThemeIconButton?.styles?.variants[variant] || "",
+                    ThemeIconButton?.styles?.variants[color] || "",
                     className,
                     classNames?.button,
                 )}
@@ -81,12 +77,6 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
                     return typeof onMouseDown === "function" && onMouseDown(e);
                 }}
             >
-                {!loading && !!icon && iconPosition === "start" && (
-                    <div className={twMerge("me-2", classNames?.icon)}>
-                        {icon}
-                    </div>
-                )}
-
                 {loading ? (
                     <div
                         className={twMerge(
@@ -99,15 +89,9 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
                 ) : (
                     children
                 )}
-
-                {!loading && !!icon && iconPosition === "end" && (
-                    <div className={twMerge("ms-2", classNames?.icon)}>
-                        {icon}
-                    </div>
-                )}
             </button>
         );
     },
 );
 
-export default Button;
+export default IconButton;
