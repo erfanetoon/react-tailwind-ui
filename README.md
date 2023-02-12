@@ -3,9 +3,10 @@
 </br>
 
 <p align="center">
-  <!-- <a href="https://www.npmjs.com/package/@erfanetoon/react-tailwind-ui">
+  <a href="https://www.npmjs.com/package/@erfanetoon/react-tailwind-ui">
     <img src="https://img.shields.io/npm/dt/@erfanetoon/react-tailwind-ui.svg" alt="Total Downloads">
-  </a> -->
+  </a>
+  
   <a href="https://github.com/erfanetoon/react-tailwind-ui/releases">
     <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version" />
   </a>
@@ -17,7 +18,7 @@ react-tailwind-ui is working with Tailwind CSS classes and you need to have Tail
 
 <br />
 
-1. Intall `@erfanetoon/react-tailwind-ui`.
+1. Install `@erfanetoon/react-tailwind-ui`.
 
 ```bash
 npm i @erfanetoon/react-tailwind-ui
@@ -92,7 +93,7 @@ export default function Example() {
 
 ## Colors
 
-Our color palette is same as tailwindcss - <a href="https://tailwindcss.com/docs/customizing-colors" target="_blank">Tailwind CSS Colors.</a>, we use `blue` as our default color in all component, you can change it in themeProvider global object
+Our color palette is same as tailwindcss - <a href="https://tailwindcss.com/docs/customizing-colors" target="_blank">Tailwind CSS Colors.</a>, but we add 3 new colors as `primary (default is blue)` `secondary (default is pink)` `tertiary (default is emerald)` that you can modify and assign your color spectrum to them, we use `primary` as our default color in all component, you can change it in themeProvider global object
 
 ```jsx
 import React from "react";
@@ -116,6 +117,29 @@ root.render(
 ```
 
 <br />
+
+You can modify our colors as same as example that we provided here, you can use <a href="https://hihayk.github.io/scale/#3/7/50/100/0/0/0/0/2196F3/33/150/243/white">Hihayk Color Generator</a> for generate color spectrum
+
+```jsx
+theme: {
+    extend: {
+      colors: {
+        primary: {
+            50: "",
+            100: "",
+            200: "",
+            300: "",
+            400: "",
+            500: "",
+            600: "",
+            700: "",
+            800: "",
+            900: "",
+        }
+      }
+    },
+},
+```
 
 ## Breakpoints
 

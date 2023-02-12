@@ -1,6 +1,27 @@
 import { Colors } from "../../../types/global";
 
 const Outlined: Record<Colors, Record<string, string>> = {
+    primary: {
+        border: "border border-primary-500",
+        color: "text-primary-500",
+        hover: "hover:opacity-75",
+        focus: "focus:ring focus:ring-primary-200",
+        active: "active:opacity-[0.85]",
+    },
+    secondary: {
+        border: "border border-secondary-500",
+        color: "text-secondary-500",
+        hover: "hover:opacity-75",
+        focus: "focus:ring focus:ring-secondary-200",
+        active: "active:opacity-[0.85]",
+    },
+    tertiary: {
+        border: "border border-tertiary-500",
+        color: "text-tertiary-500",
+        hover: "hover:opacity-75",
+        focus: "focus:ring focus:ring-tertiary-200",
+        active: "active:opacity-[0.85]",
+    },
     amber: {
         border: "border border-amber-500",
         color: "text-amber-500",

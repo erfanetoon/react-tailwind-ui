@@ -1,6 +1,30 @@
 import { Colors } from "../../../types/global";
 
 const Gradient: Record<Colors, Record<string, string>> = {
+    primary: {
+        backgroud:
+            "bg-gradient-to-tr from-primary-600 to-primary-400 border-primary-500",
+        color: "text-white",
+        shadow: "shadow-md shadow-primary-500/20",
+        hover: "hover:shadow-lg hover:shadow-primary-500/40",
+        active: "active:opacity-[0.85]",
+    },
+    secondary: {
+        backgroud:
+            "bg-gradient-to-tr from-secondary-600 to-secondary-400 border-secondary-500",
+        color: "text-white",
+        shadow: "shadow-md shadow-secondary-500/20",
+        hover: "hover:shadow-lg hover:shadow-secondary-500/40",
+        active: "active:opacity-[0.85]",
+    },
+    tertiary: {
+        backgroud:
+            "bg-gradient-to-tr from-tertiary-600 to-tertiary-400 border-tertiary-500",
+        color: "text-white",
+        shadow: "shadow-md shadow-tertiary-500/20",
+        hover: "hover:shadow-lg hover:shadow-tertiary-500/40",
+        active: "active:opacity-[0.85]",
+    },
     amber: {
         backgroud:
             "bg-gradient-to-tr from-amber-600 to-amber-400 border-amber-500",

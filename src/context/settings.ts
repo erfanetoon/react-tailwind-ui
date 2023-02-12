@@ -2,7 +2,7 @@ import { ThemeContext } from "./types";
 
 export const DefaultValue: ThemeContext = {
     global: {
-        color: "blue",
+        color: "primary",
         transition: "transition-all duration-300",
         borderRadius: "rounded",
     },

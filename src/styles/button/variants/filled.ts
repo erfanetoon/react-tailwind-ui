@@ -1,6 +1,33 @@
 import { Colors } from "../../../types/global";
 
 const Filled: Record<Colors, Record<string, string>> = {
+    primary: {
+        backgroud: "bg-primary-500",
+        border: "border-primary-500",
+        color: "text-white",
+        shadow: "shadow-md shadow-primary-500/20",
+        hover: "hover:shadow-lg hover:shadow-primary-500/40",
+        focus: "focus:opacity-[0.85] focus:shadow-none",
+        active: "active:opacity-[0.85] active:shadow-none",
+    },
+    secondary: {
+        backgroud: "bg-secondary-500",
+        border: "border-secondary-500",
+        color: "text-white",
+        shadow: "shadow-md shadow-secondary-500/20",
+        hover: "hover:shadow-lg hover:shadow-secondary-500/40",
+        focus: "focus:opacity-[0.85] focus:shadow-none",
+        active: "active:opacity-[0.85] active:shadow-none",
+    },
+    tertiary: {
+        backgroud: "bg-tertiary-500",
+        border: "border-tertiary-500",
+        color: "text-white",
+        shadow: "shadow-md shadow-tertiary-500/20",
+        hover: "hover:shadow-lg hover:shadow-tertiary-500/40",
+        focus: "focus:opacity-[0.85] focus:shadow-none",
+        active: "active:opacity-[0.85] active:shadow-none",
+    },
     amber: {
         backgroud: "bg-amber-500",
         border: "border-amber-500",

@@ -1,6 +1,24 @@
 import { Colors } from "../../../types/global";
 
 const Text: Record<Colors, Record<string, string>> = {
+    primary: {
+        border: "border-transparent",
+        color: "text-primary-500",
+        hover: "hover:bg-primary-500/10 hover:border-primary-500/10",
+        active: "active:bg-primary-500/30 active:border-primary-500/30",
+    },
+    secondary: {
+        border: "border-transparent",
+        color: "text-secondary-500",
+        hover: "hover:bg-secondary-500/10 hover:border-secondary-500/10",
+        active: "active:bg-secondary-500/30 active:border-secondary-500/30",
+    },
+    tertiary: {
+        border: "border-transparent",
+        color: "text-tertiary-500",
+        hover: "hover:bg-tertiary-500/10 hover:border-tertiary-500/10",
+        active: "active:bg-tertiary-500/30 active:border-tertiary-500/30",
+    },
     amber: {
         border: "border-transparent",
         color: "text-amber-500",

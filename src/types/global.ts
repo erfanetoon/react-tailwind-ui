@@ -1,6 +1,9 @@
 export type Sizes = "xs" | "sm" | "md" | "lg" | "xl";
 
 export type Colors =
+    | "primary"
+    | "secondary"
+    | "tertiary"
     | "slate"
     | "gray"
     | "zinc"
@@ -23,29 +26,3 @@ export type Colors =
     | "fuchsia"
     | "pink"
     | "rose";
-
-// type InputVariants = "default" | "outlined";
-
-// type InputCodeModeTypes =
-//     | "verbatim"
-//     | "latin"
-//     | "latin-name"
-//     | "latin-prose"
-//     | "full-width-latin"
-//     | "kana"
-//     | "kana-name"
-//     | "katakana"
-//     | "numeric"
-//     | "tel"
-//     | "email"
-//     | "url";
-
-// type DropdownPositions =
-//     | "topStart"
-//     | "topEnd"
-//     | "bottomStart"
-//     | "bottomEnd"
-//     | "startBottom"
-//     | "startTop"
-//     | "endBottom"
-//     | "endTop";
