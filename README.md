@@ -89,6 +89,30 @@ export default function Example() {
 }
 ```
 
+```jsx
+import { Input } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <Input>Input</Input>;
+}
+```
+
+```jsx
+import { CodeInput } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <CodeInput>CodeInput</CodeInput>;
+}
+```
+
+```jsx
+import { PasswordInput } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <PasswordInput>PasswordInput</PasswordInput>;
+}
+```
+
 <br />
 
 ## Colors
@@ -166,6 +190,22 @@ theme: {
 
 <br />
 
+## Direction (rtl support)
+
+We handle rtl and ltr design, you can put your ideal direction on `ThemeProvider` and you can use it with this pattern `rtl:text-left ltr:text-right`
+
+```jsx
+<ThemeProvider
+    global={{
+        direction: "rtl", // ltr | rtl
+    }}
+>
+    <App />
+</ThemeProvider>
+```
+
+<br />
+
 ## Font Sizes
 
 We define new font size values
@@ -223,3 +263,7 @@ theme: {
     },
 },
 ```
+
+## `tailwindcss-rtl` library
+
+We use this library built-in and you can use its classes in your app
