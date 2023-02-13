@@ -75,7 +75,6 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
                                 sizeStyles,
                                 ThemeInput?.styles?.sizes[size] || "",
                             ].join(" "),
-
                             Object.values(colorStyles)
                                 .map((item) => item)
                                 .join(" "),
