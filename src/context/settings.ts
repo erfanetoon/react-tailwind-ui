@@ -14,6 +14,13 @@ export const DefaultValue: ThemeContext = {
             size: "md",
         },
     },
+    chip: {
+        defaultProps: {
+            variant: "filled",
+            ripple: true,
+            size: "md",
+        },
+    },
     iconButton: {
         defaultProps: {
             variant: "filled",

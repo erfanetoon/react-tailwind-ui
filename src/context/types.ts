@@ -2,6 +2,7 @@ import { Colors, Sizes } from "../types/global";
 import { ButtonThemeProps } from "../components/button/types";
 import { IconButtonThemeProps } from "src/components/iconButton/types";
 import { InputThemeProps } from "src/components/input/types";
+import { ChipThemeProps } from "@components/chip/types";
 
 export interface ThemeContext {
     global?: {
@@ -17,6 +18,15 @@ export interface ThemeContext {
             colors?: Partial<Record<Colors, string>>;
             sizes?: Partial<Record<Sizes, string>>;
             variants?: Partial<Record<ButtonThemeProps["variant"], string>>;
+        };
+    };
+    chip?: {
+        defaultProps?: Required<ChipThemeProps>;
+        styles?: {
+            base?: string;
+            colors?: Partial<Record<Colors, string>>;
+            sizes?: Partial<Record<Sizes, string>>;
+            variants?: Partial<Record<ChipThemeProps["variant"], string>>;
         };
     };
     iconButton?: {
