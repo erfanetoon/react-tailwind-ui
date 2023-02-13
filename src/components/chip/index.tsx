@@ -23,16 +23,16 @@ export const Chip = React.forwardRef<HTMLDivElement, Props>(
             classNames,
             events,
             children,
-            ...buttonProps
+            ...restProps
         },
         ref,
     ) => {
-        const { global, button: ThemeButton } = useTheme();
+        const { global, chip: themeProps } = useTheme();
 
         color = color ?? global?.color;
-        variant = variant ?? ThemeButton?.defaultProps?.variant;
-        size = size ?? ThemeButton?.defaultProps?.size;
-        ripple = ripple ?? ThemeButton?.defaultProps?.ripple;
+        variant = variant ?? themeProps?.defaultProps?.variant;
+        size = size ?? themeProps?.defaultProps?.size;
+        ripple = ripple ?? themeProps?.defaultProps?.ripple;
 
         const rippleEffect = ripple !== undefined && new Ripple();
 
@@ -42,7 +42,7 @@ export const Chip = React.forwardRef<HTMLDivElement, Props>(
 
         return (
             <div
-                {...buttonProps}
+                {...restProps}
                 ref={ref}
                 className={twMerge(
                     [
@@ -50,20 +50,20 @@ export const Chip = React.forwardRef<HTMLDivElement, Props>(
                         "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
                         global?.borderRadius || "",
                         global?.transition || "",
-                        ThemeButton?.styles?.base || "",
+                        themeProps?.styles?.base || "",
                         sizeStyles,
-                        ThemeButton?.styles?.sizes[size] || "",
+                        themeProps?.styles?.sizes[size] || "",
                     ].join(" "),
                     Object.values(variantStyles)
                         .map((item) => item)
                         .join(" "),
-                    ThemeButton?.styles?.variants[variant] || "",
-                    ThemeButton?.styles?.variants[color] || "",
+                    themeProps?.styles?.variants[variant] || "",
+                    themeProps?.styles?.variants[color] || "",
                     className,
                     classNames?.element,
                 )}
                 onMouseDown={(e) => {
-                    const onMouseDown = buttonProps?.onMouseDown;
+                    const onMouseDown = restProps?.onMouseDown;
 
                     if (ripple) {
                         rippleEffect.create(
