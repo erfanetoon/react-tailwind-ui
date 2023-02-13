@@ -46,8 +46,8 @@ export const IconButton = React.forwardRef<HTMLButtonElement, Props>(
                     [
                         "inline-flex items-center justify-center cursor-pointer border font-medium align-middle",
                         "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
-                        global.borderRadius,
-                        global.transition,
+                        global?.borderRadius || "",
+                        global?.transition || "",
                         ThemeIconButton?.styles?.base || "",
                         sizeStyles,
                         ThemeIconButton?.styles?.sizes[size] || "",

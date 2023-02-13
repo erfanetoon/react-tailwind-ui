@@ -3,6 +3,7 @@ import { ThemeContext } from "./types";
 export const DefaultValue: ThemeContext = {
     global: {
         color: "primary",
+        direction: "ltr",
         transition: "transition-all duration-300",
         borderRadius: "rounded",
     },
@@ -18,6 +19,12 @@ export const DefaultValue: ThemeContext = {
             variant: "filled",
             ripple: true,
             size: "md",
+        },
+    },
+    input: {
+        defaultProps: {
+            size: "md",
+            variant: "default",
         },
     },
 };

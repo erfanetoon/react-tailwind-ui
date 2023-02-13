@@ -28,7 +28,12 @@ export const ThemeProvider: FC<Props & ThemeContext> = ({
 
     return (
         <Context.Provider value={{ ...data, handleChange }}>
-            {children}
+            <section
+                dir={data.global?.direction}
+                className={`${data.global?.direction}`}
+            >
+                {children}
+            </section>
         </Context.Provider>
     );
 };

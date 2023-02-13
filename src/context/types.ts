@@ -1,10 +1,12 @@
 import { Colors, Sizes } from "../types/global";
 import { ButtonThemeProps } from "../components/button/types";
 import { IconButtonThemeProps } from "src/components/iconButton/types";
+import { InputThemeProps } from "src/components/input/types";
 
 export interface ThemeContext {
-    global: {
+    global?: {
         color?: Colors;
+        direction?: "ltr" | "rtl";
         transition?: string;
         borderRadius?: string;
     };
@@ -24,6 +26,15 @@ export interface ThemeContext {
             colors?: Partial<Record<Colors, string>>;
             sizes?: Partial<Record<Sizes, string>>;
             variants?: Partial<Record<IconButtonThemeProps["variant"], string>>;
+        };
+    };
+    input?: {
+        defaultProps?: Required<InputThemeProps>;
+        styles?: {
+            base?: string;
+            colors?: Partial<Record<Colors, string>>;
+            sizes?: Partial<Record<Sizes, string>>;
+            variants?: Partial<Record<InputThemeProps["variant"], string>>;
         };
     };
 }

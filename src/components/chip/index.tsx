@@ -48,8 +48,8 @@ export const Chip = React.forwardRef<HTMLDivElement, Props>(
                     [
                         "inline-block inline-flex items-center justify-center border font-medium align-middle",
                         "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
-                        global.borderRadius,
-                        global.transition,
+                        global?.borderRadius || "",
+                        global?.transition || "",
                         ThemeButton?.styles?.base || "",
                         sizeStyles,
                         ThemeButton?.styles?.sizes[size] || "",
