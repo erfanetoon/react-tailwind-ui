@@ -1,5 +1,4 @@
 const merge = require("deepmerge");
-const rtlPlugin = require("tailwindcss-rtl");
 const breakpoints = require("./config/breakpoints");
 const colors = require("./config/colors");
 const fontSizes = require("./config/fontSizes");
@@ -23,7 +22,7 @@ function withTailwind(tailwindConfig) {
                 fontSize: fontSizes.default,
                 screens: breakpoints.default,
             },
-            plugins: [rtlPlugin],
+            plugins: [require("tailwindcss-rtl")],
         },
         { ...tailwindConfig },
     );
