@@ -31,6 +31,7 @@
         "material-ripple-effects": "^2.0.1",
         "react": "^16 || ^17 || ^18",
         "react-dom": "^16 || ^17 || ^18",
+        "react-icons": "^4.7.1",
         "react-merge-refs": "^2.0.1",
         "tailwind-merge": "^1.9.1",
         "tailwindcss-rtl": "^0.9.0"

@@ -19,14 +19,6 @@
         "outDir": "dist",
         "declarationMap": true,
         "baseUrl": ".",
-        "paths": {
-            "@components/*": ["src/components/*"],
-            "@config/*": ["src/config/*"],
-            "@context/*": ["src/context/index.tsx"],
-            "@styles/*": ["src/styles/*"],
-            "@types/*": ["src/types/*"],
-            "@src/*": ["src/*"]
-        },
         "typeRoots": ["node_modules/@types"]
     }
 }

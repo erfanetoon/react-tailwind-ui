@@ -21,6 +21,12 @@ export const DefaultValue: ThemeContext = {
             size: "md",
         },
     },
+    codeInput: {
+        defaultProps: {
+            size: "md",
+            variant: "default",
+        },
+    },
     iconButton: {
         defaultProps: {
             variant: "filled",

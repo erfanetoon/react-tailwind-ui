@@ -1,5 +1,5 @@
-import { InputThemeProps } from "src/components/input/types";
-import { Colors } from "src/types/global";
+import { InputThemeProps } from "../../../components/input/types";
+import { Colors } from "../../../types/global";
 import Default from "./default";
 import Outlined from "./outlined";
 

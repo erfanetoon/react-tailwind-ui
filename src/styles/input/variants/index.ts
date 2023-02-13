@@ -1,4 +1,4 @@
-import { InputThemeProps } from "src/components/input/types";
+import { InputThemeProps } from "../../../components/input/types";
 
 const InputVariants: Record<InputThemeProps["variant"], string> = {
     default: "border",
