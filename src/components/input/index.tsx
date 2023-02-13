@@ -21,15 +21,15 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
             className,
             classNames,
             children,
-            ...inputProps
+            ...restProps
         },
         ref,
     ) => {
-        const { global, input: ThemeInput } = useTheme();
+        const { global, input: themeProps } = useTheme();
 
         color = color ?? global?.color;
-        variant = variant ?? ThemeInput?.defaultProps?.variant;
-        size = size ?? ThemeInput?.defaultProps?.size;
+        variant = variant ?? themeProps?.defaultProps?.variant;
+        size = size ?? themeProps?.defaultProps?.size;
 
         const sizeStyles = InputSizes[size];
 
@@ -45,7 +45,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
                             "text-sm text-gray-600 block",
                             classNames?.label,
                         )}
-                        htmlFor={inputProps.id}
+                        htmlFor={restProps.id}
                     >
                         {label}
                     </label>
@@ -64,23 +64,23 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
                     )}
 
                     <input
-                        {...inputProps}
+                        {...restProps}
                         className={twMerge(
                             [
                                 "w-full text-gray-700 outline-none",
                                 "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
                                 global?.borderRadius || "",
                                 global?.transition || "",
-                                ThemeInput?.styles?.base || "",
+                                themeProps?.styles?.base || "",
                                 sizeStyles,
-                                ThemeInput?.styles?.sizes[size] || "",
+                                themeProps?.styles?.sizes[size] || "",
                             ].join(" "),
                             Object.values(colorStyles)
                                 .map((item) => item)
                                 .join(" "),
-                            ThemeInput?.styles?.colors[color] || "",
+                            themeProps?.styles?.colors[color] || "",
                             variantStyles,
-                            ThemeInput?.styles?.variants[variant] || "",
+                            themeProps?.styles?.variants[variant] || "",
                             !!icon && iconPosition === "start" && "ps-8",
                             !!icon && iconPosition === "end" && "pe-8",
                             !!error && "border-red-500",
