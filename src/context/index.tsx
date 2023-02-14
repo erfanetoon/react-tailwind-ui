@@ -20,10 +20,7 @@ export const ThemeProvider: FC<Props & ThemeContext> = ({
     const [data, setData] = useState(deepmerge(DefaultValue, incomingData));
 
     const handleChange: ThemeAction = (newData) => {
-        setData({
-            ...data,
-            ...newData,
-        });
+        setData(deepmerge(data, newData));
     };
 
     return (

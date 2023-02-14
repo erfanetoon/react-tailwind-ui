@@ -5,6 +5,11 @@ export interface ChipThemeProps {
     variant?: "text" | "filled" | "outlined" | "outlined_filled" | "gradient";
     size?: Sizes;
     ripple?: boolean;
+    classNames?: {
+        element?: string;
+        icon?: string;
+        text?: string;
+    };
 }
 
 export interface ChipProps extends ComponentProps<"div"> {
@@ -13,11 +18,6 @@ export interface ChipProps extends ComponentProps<"div"> {
     loadingIcon?: React.ReactNode;
     icon?: React.ReactNode;
     iconPosition?: "start" | "end";
-    classNames?: {
-        element?: string;
-        icon?: string;
-        text?: string;
-    };
     events?: {
         handleClickIcon?: MouseEventHandler<HTMLDivElement>;
     };

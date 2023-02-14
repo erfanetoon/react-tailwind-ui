@@ -59,4 +59,4 @@ export interface ThemeContext {
     };
 }
 
-export type ThemeAction = (data: Partial<ThemeContext>) => void;
+export type ThemeAction = (data: ThemeContext) => void;

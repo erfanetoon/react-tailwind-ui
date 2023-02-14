@@ -3,6 +3,10 @@ import { Colors, Sizes } from "../../types/global";
 export interface CodeInputThemeProps {
     variant?: "default" | "outlined";
     size?: Sizes;
+    classNames?: {
+        wrapper?: string;
+        input?: string;
+    };
 }
 
 export interface CodeInputProps {
@@ -22,10 +26,6 @@ export interface CodeInputProps {
         | "email"
         | "url";
     color?: Colors;
-    classNames?: {
-        wrapper?: string;
-        input?: string;
-    };
     error?: string;
     type?: "text" | "number" | "password" | "tel";
     fields?: number;

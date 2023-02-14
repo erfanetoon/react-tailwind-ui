@@ -12,6 +12,7 @@ export const DefaultValue: ThemeContext = {
             variant: "filled",
             ripple: true,
             size: "md",
+            classNames: {},
         },
     },
     chip: {
@@ -19,12 +20,14 @@ export const DefaultValue: ThemeContext = {
             variant: "filled",
             ripple: true,
             size: "md",
+            classNames: {},
         },
     },
     codeInput: {
         defaultProps: {
             size: "md",
             variant: "default",
+            classNames: {},
         },
     },
     iconButton: {
@@ -32,12 +35,14 @@ export const DefaultValue: ThemeContext = {
             variant: "filled",
             ripple: true,
             size: "md",
+            classNames: {},
         },
     },
     input: {
         defaultProps: {
             size: "md",
             variant: "default",
+            classNames: {},
         },
     },
 };
