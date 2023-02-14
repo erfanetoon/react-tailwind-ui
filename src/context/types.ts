@@ -10,11 +10,11 @@ export interface ThemeContext {
     global?: {
         color?: Colors;
         direction?: "ltr" | "rtl";
-        transition?: string;
-        borderRadius?: string;
+        transition?: string; // Default is 'transition-all duration-300'
+        borderRadius?: string; // Must be tailwind class for example: rounded, rounded-sm, rounded-md, rounded-lg (default is 'rounded')
     };
     button?: {
-        defaultProps?: Required<ButtonThemeProps>;
+        defaultProps?: ButtonThemeProps;
         styles?: {
             base?: string;
             colors?: Partial<Record<Colors, string>>;
@@ -23,7 +23,7 @@ export interface ThemeContext {
         };
     };
     chip?: {
-        defaultProps?: Required<ChipThemeProps>;
+        defaultProps?: ChipThemeProps;
         styles?: {
             base?: string;
             colors?: Partial<Record<Colors, string>>;
@@ -32,7 +32,7 @@ export interface ThemeContext {
         };
     };
     codeInput?: {
-        defaultProps?: Required<CodeInputThemeProps>;
+        defaultProps?: CodeInputThemeProps;
         styles?: {
             base?: string;
             colors?: Partial<Record<Colors, string>>;
@@ -41,7 +41,7 @@ export interface ThemeContext {
         };
     };
     iconButton?: {
-        defaultProps?: Required<IconButtonThemeProps>;
+        defaultProps?: IconButtonThemeProps;
         styles?: {
             base?: string;
             colors?: Partial<Record<Colors, string>>;
@@ -50,7 +50,7 @@ export interface ThemeContext {
         };
     };
     input?: {
-        defaultProps?: Required<InputThemeProps>;
+        defaultProps?: InputThemeProps;
         styles?: {
             base?: string;
             colors?: Partial<Record<Colors, string>>;
@@ -59,7 +59,7 @@ export interface ThemeContext {
         };
     };
     textarea?: {
-        defaultProps?: Required<TextareaThemeProps>;
+        defaultProps?: TextareaThemeProps;
         styles?: {
             base?: string;
             colors?: Partial<Record<Colors, string>>;
