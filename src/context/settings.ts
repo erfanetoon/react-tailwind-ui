@@ -45,4 +45,11 @@ export const DefaultValue: ThemeContext = {
             classNames: {},
         },
     },
+    textarea: {
+        defaultProps: {
+            size: "md",
+            variant: "default",
+            classNames: {},
+        },
+    },
 };

@@ -4,6 +4,7 @@ import { IconButtonThemeProps } from "../components/iconButton/types";
 import { InputThemeProps } from "../components/input/types";
 import { ChipThemeProps } from "../components/chip/types";
 import { CodeInputThemeProps } from "../components/codeInput/types";
+import { TextareaThemeProps } from "src/components/textarea/types";
 
 export interface ThemeContext {
     global?: {
@@ -55,6 +56,15 @@ export interface ThemeContext {
             colors?: Partial<Record<Colors, string>>;
             sizes?: Partial<Record<Sizes, string>>;
             variants?: Partial<Record<InputThemeProps["variant"], string>>;
+        };
+    };
+    textarea?: {
+        defaultProps?: Required<TextareaThemeProps>;
+        styles?: {
+            base?: string;
+            colors?: Partial<Record<Colors, string>>;
+            sizes?: Partial<Record<Sizes, string>>;
+            variants?: Partial<Record<TextareaThemeProps["variant"], string>>;
         };
     };
 }
