@@ -5,6 +5,7 @@ import ChipSizes from "../../styles/chip/sizes";
 import ChipVariants from "../../styles/chip/variants";
 import { ChipProps, ChipThemeProps } from "./types";
 import Ripple from "material-ripple-effects";
+import deepmerge from "deepmerge";
 
 type Props = ChipProps & ChipThemeProps;
 
@@ -33,6 +34,10 @@ export const Chip = React.forwardRef<HTMLDivElement, Props>(
         variant = variant ?? themeProps?.defaultProps?.variant;
         size = size ?? themeProps?.defaultProps?.size;
         ripple = ripple ?? themeProps?.defaultProps?.ripple;
+        classNames = deepmerge(
+            classNames,
+            themeProps?.defaultProps?.classNames || {},
+        );
 
         const rippleEffect = ripple !== undefined && new Ripple();
 

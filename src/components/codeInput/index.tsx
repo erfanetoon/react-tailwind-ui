@@ -2,6 +2,7 @@ import React from "react";
 import { useTheme } from "../../context";
 import ClassComponent from "./component";
 import { CodeInputProps, CodeInputThemeProps } from "./types";
+import deepmerge from "deepmerge";
 
 type Props = CodeInputProps & CodeInputThemeProps;
 
@@ -16,6 +17,10 @@ export const CodeInput = (props: Props) => {
             global={global}
             themeProps={themeProps}
             {...props}
+            classNames={deepmerge(
+                props.classNames,
+                themeProps?.defaultProps?.classNames || {},
+            )}
         />
     );
 };

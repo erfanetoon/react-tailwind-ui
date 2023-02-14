@@ -5,6 +5,7 @@ import ButtonSizes from "../../styles/iconButton/sizes";
 import ButtonVariants from "../../styles/iconButton/variants";
 import { IconButtonProps, IconButtonThemeProps } from "./types";
 import Ripple from "material-ripple-effects";
+import deepmerge from "deepmerge";
 
 type Props = IconButtonProps & IconButtonThemeProps;
 
@@ -30,6 +31,10 @@ export const IconButton = React.forwardRef<HTMLButtonElement, Props>(
         variant = variant ?? themeProps?.defaultProps?.variant;
         size = size ?? themeProps?.defaultProps?.size;
         ripple = ripple ?? themeProps?.defaultProps?.ripple;
+        classNames = deepmerge(
+            classNames,
+            themeProps?.defaultProps?.classNames || {},
+        );
 
         const rippleEffect = ripple !== undefined && new Ripple();
 

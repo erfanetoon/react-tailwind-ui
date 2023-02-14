@@ -5,6 +5,7 @@ import TextareaSizes from "../../styles/textarea/sizes";
 import TextareaColors from "../../styles/textarea/colors";
 import TextareaVariants from "../../styles/textarea/variants";
 import { TextareaProps, TextareaThemeProps } from "./types";
+import deepmerge from "deepmerge";
 
 type Props = TextareaProps & TextareaThemeProps;
 
@@ -30,6 +31,10 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, Props>(
         color = color ?? global?.color;
         variant = variant ?? themeProps?.defaultProps?.variant;
         size = size ?? themeProps?.defaultProps?.size;
+        classNames = deepmerge(
+            classNames,
+            themeProps?.defaultProps?.classNames || {},
+        );
 
         const sizeStyles = TextareaSizes[size];
 

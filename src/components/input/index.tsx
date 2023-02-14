@@ -5,6 +5,7 @@ import { InputProps, InputThemeProps } from "./types";
 import InputSizes from "../../styles/input/sizes";
 import InputColors from "../../styles/input/colors";
 import InputVariants from "../../styles/input/variants";
+import deepmerge from "deepmerge";
 
 type Props = InputProps & InputThemeProps;
 
@@ -30,6 +31,10 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
         color = color ?? global?.color;
         variant = variant ?? themeProps?.defaultProps?.variant;
         size = size ?? themeProps?.defaultProps?.size;
+        classNames = deepmerge(
+            classNames,
+            themeProps?.defaultProps?.classNames || {},
+        );
 
         const sizeStyles = InputSizes[size];
 
