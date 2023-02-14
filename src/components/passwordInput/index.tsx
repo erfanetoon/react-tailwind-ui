@@ -18,12 +18,16 @@ export const PasswordInput = React.forwardRef<HTMLInputElement, Props>(
                     isShow ? (
                         <IoEyeOffOutline
                             className="cursor-pointer text-lg text-gray-500 transition-all duration-300 hover:text-pink-500"
-                            onClick={() => setIsShow(false)}
+                            onClick={() =>
+                                !inputProps.disabled && setIsShow(false)
+                            }
                         />
                     ) : (
                         <IoEyeOutline
                             className="cursor-pointer text-lg text-gray-500 transition-all duration-300 hover:text-pink-500"
-                            onClick={() => setIsShow(true)}
+                            onClick={() =>
+                                !inputProps.disabled && setIsShow(true)
+                            }
                         />
                     )
                 }
