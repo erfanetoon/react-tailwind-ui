@@ -1,11 +1,11 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import deepmerge from "deepmerge";
 import { useTheme } from "../../context";
 import TextareaSizes from "../../styles/textarea/sizes";
 import TextareaColors from "../../styles/textarea/colors";
 import TextareaVariants from "../../styles/textarea/variants";
-import { TextareaProps, TextareaThemeProps } from "./types";
-import deepmerge from "deepmerge";
+import type { TextareaProps, TextareaThemeProps } from "./types";
 
 type Props = TextareaProps & TextareaThemeProps;
 
@@ -76,19 +76,19 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, Props>(
                                 "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
                                 global?.borderRadius || "",
                                 global?.transition || "",
-                                themeProps?.styles?.base || "",
                                 sizeStyles,
+                                variantStyles,
+                                Object.values(colorStyles)
+                                    .map((item) => item)
+                                    .join(" "),
+                                themeProps?.styles?.base || "",
                                 themeProps?.styles?.sizes[size] || "",
+                                themeProps?.styles?.colors[color] || "",
+                                themeProps?.styles?.variants[variant] || "",
+                                !!icon && iconPosition === "start" && "ps-8",
+                                !!icon && iconPosition === "end" && "pe-8",
+                                !!error && "border-red-500",
                             ].join(" "),
-                            Object.values(colorStyles)
-                                .map((item) => item)
-                                .join(" "),
-                            themeProps?.styles?.colors[color] || "",
-                            variantStyles,
-                            themeProps?.styles?.variants[variant] || "",
-                            !!icon && iconPosition === "start" && "ps-8",
-                            !!icon && iconPosition === "end" && "pe-8",
-                            !!error && "border-red-500",
                             className,
                             classNames?.input,
                         )}
