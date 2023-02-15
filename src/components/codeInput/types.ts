@@ -1,4 +1,4 @@
-import { Colors, Sizes } from "../../types/global";
+import type { Colors, Sizes } from "../../types/global";
 
 export interface CodeInputThemeProps {
     variant?: "default" | "outlined";

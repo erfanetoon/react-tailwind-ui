@@ -242,16 +242,19 @@ class ClassComponent extends Component {
             } = this.props,
             { disabled, input, isValid } = this.state;
 
-        const sizeStyles = CodeInputSizes[size];
-
-        const variantStyles = CodeInputVariants[variant];
-
-        const colorStyles = CodeInputColors[variant][color];
-
+        const localColor = color ?? global?.color;
+        const localVariant = variant ?? themeProps?.defaultProps?.variant;
+        const localSize = size ?? themeProps?.defaultProps?.size;
         const localClassNames = deepmerge(
             themeProps?.defaultProps?.classNames || {},
             classNames || {},
         );
+
+        const sizeStyles = CodeInputSizes[localSize];
+
+        const variantStyles = CodeInputVariants[localVariant];
+
+        const colorStyles = CodeInputColors[localVariant][localColor];
 
         return (
             <div
@@ -272,17 +275,20 @@ class ClassComponent extends Component {
                                     "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
                                     global?.borderRadius || "",
                                     global?.transition || "",
-                                    themeProps?.styles?.base || "",
                                     sizeStyles,
-                                    themeProps?.styles?.sizes[size] || "",
+                                    variantStyles,
+                                    Object.values(colorStyles)
+                                        .map((item) => item)
+                                        .join(" "),
+                                    themeProps?.styles?.base || "",
+                                    themeProps?.styles?.sizes[localSize] || "",
+                                    themeProps?.styles?.variants[
+                                        localVariant
+                                    ] || "",
+                                    themeProps?.styles?.colors[localColor] ||
+                                        "",
+                                    !!error && "border-red-500",
                                 ].join(" "),
-                                Object.values(colorStyles)
-                                    .map((item) => item)
-                                    .join(" "),
-                                themeProps?.styles?.colors[color] || "",
-                                variantStyles,
-                                themeProps?.styles?.variants[variant] || "",
-                                !!error && "border-red-500",
                                 localClassNames?.input,
                             )}
                             ref={(ref) => {
