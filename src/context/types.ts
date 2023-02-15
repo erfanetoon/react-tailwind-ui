@@ -5,6 +5,7 @@ import { InputThemeProps } from "../components/input/types";
 import { ChipThemeProps } from "../components/chip/types";
 import { CodeInputThemeProps } from "../components/codeInput/types";
 import { TextareaThemeProps } from "src/components/textarea/types";
+import { HintThemeProps } from "src/components/hint/types";
 
 export interface ThemeContext {
     global?: {
@@ -40,6 +41,13 @@ export interface ThemeContext {
             variants?: Partial<Record<CodeInputThemeProps["variant"], string>>;
         };
     };
+    hint?: {
+        defaultProps?: HintThemeProps;
+        styles?: {
+            base?: string;
+            colors?: Partial<Record<Colors, string>>;
+        };
+    };
     iconButton?: {
         defaultProps?: IconButtonThemeProps;
         styles?: {
@@ -50,6 +58,15 @@ export interface ThemeContext {
         };
     };
     input?: {
+        defaultProps?: InputThemeProps;
+        styles?: {
+            base?: string;
+            colors?: Partial<Record<Colors, string>>;
+            sizes?: Partial<Record<Sizes, string>>;
+            variants?: Partial<Record<InputThemeProps["variant"], string>>;
+        };
+    };
+    passwordInput?: {
         defaultProps?: InputThemeProps;
         styles?: {
             base?: string;

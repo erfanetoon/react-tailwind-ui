@@ -32,8 +32,8 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
         variant = variant ?? themeProps?.defaultProps?.variant;
         size = size ?? themeProps?.defaultProps?.size;
         classNames = deepmerge(
-            classNames,
             themeProps?.defaultProps?.classNames || {},
+            classNames || {},
         );
 
         const sizeStyles = InputSizes[size];

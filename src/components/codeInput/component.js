@@ -248,9 +248,17 @@ class ClassComponent extends Component {
 
         const colorStyles = CodeInputColors[variant][color];
 
+        const localClassNames = deepmerge(
+            themeProps?.defaultProps?.classNames || {},
+            classNames || {},
+        );
+
         return (
             <div
-                className={twMerge("block text-center", classNames?.wrapper)}
+                className={twMerge(
+                    "block text-center",
+                    localClassNames?.wrapper,
+                )}
                 style={{
                     direction: "ltr",
                 }}
@@ -275,7 +283,7 @@ class ClassComponent extends Component {
                                 variantStyles,
                                 themeProps?.styles?.variants[variant] || "",
                                 !!error && "border-red-500",
-                                classNames?.input,
+                                localClassNames?.input,
                             )}
                             ref={(ref) => {
                                 this.textInput[i] = ref;

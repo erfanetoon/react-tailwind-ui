@@ -32,8 +32,8 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, Props>(
         variant = variant ?? themeProps?.defaultProps?.variant;
         size = size ?? themeProps?.defaultProps?.size;
         classNames = deepmerge(
-            classNames,
             themeProps?.defaultProps?.classNames || {},
+            classNames || {},
         );
 
         const sizeStyles = TextareaSizes[size];

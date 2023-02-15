@@ -35,8 +35,8 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
         size = size ?? themeProps?.defaultProps?.size;
         ripple = ripple ?? themeProps?.defaultProps?.ripple;
         classNames = deepmerge(
-            classNames,
             themeProps?.defaultProps?.classNames || {},
+            classNames || {},
         );
 
         const rippleEffect = ripple !== undefined && new Ripple();

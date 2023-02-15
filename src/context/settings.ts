@@ -30,6 +30,11 @@ export const DefaultValue: ThemeContext = {
             classNames: {},
         },
     },
+    hint: {
+        defaultProps: {
+            className: "",
+        },
+    },
     iconButton: {
         defaultProps: {
             variant: "filled",
@@ -39,6 +44,13 @@ export const DefaultValue: ThemeContext = {
         },
     },
     input: {
+        defaultProps: {
+            size: "md",
+            variant: "default",
+            classNames: {},
+        },
+    },
+    passwordInput: {
         defaultProps: {
             size: "md",
             variant: "default",

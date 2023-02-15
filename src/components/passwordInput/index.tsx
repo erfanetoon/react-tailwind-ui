@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import Input from "../input";
 import { InputProps, InputThemeProps } from "../input/types";
+import { useTheme } from "src/context";
+import deepmerge from "deepmerge";
 
 type Props = InputProps & InputThemeProps;
 
 export const PasswordInput = React.forwardRef<HTMLInputElement, Props>(
-    ({ ...inputProps }, ref) => {
+    ({ classNames, ...inputProps }, ref) => {
         const [isShow, setIsShow] = useState(false);
+
+        const { passwordInput: themeProps } = useTheme();
 
         return (
             <Input
+                classNames={deepmerge(
+                    themeProps?.defaultProps?.classNames || {},
+                    classNames || {},
+                )}
                 {...inputProps}
                 ref={ref}
                 type={isShow ? "text" : "password"}
