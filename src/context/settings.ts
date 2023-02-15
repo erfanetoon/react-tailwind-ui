@@ -18,7 +18,7 @@ export const DefaultValue: ThemeContext = {
     chip: {
         defaultProps: {
             variant: "filled",
-            ripple: true,
+            ripple: false,
             size: "md",
             classNames: {},
         },

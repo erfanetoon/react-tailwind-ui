@@ -1,5 +1,5 @@
-import { ComponentProps, MouseEventHandler } from "react";
-import { Colors, Sizes } from "../../types/global";
+import type { ComponentProps, MouseEventHandler } from "react";
+import type { Colors, Sizes } from "../../types/global";
 
 export interface ChipThemeProps {
     variant?: "text" | "filled" | "outlined" | "outlined_filled" | "gradient";

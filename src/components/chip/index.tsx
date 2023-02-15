@@ -1,11 +1,11 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import Ripple from "material-ripple-effects";
+import deepmerge from "deepmerge";
 import { useTheme } from "../../context";
 import ChipSizes from "../../styles/chip/sizes";
 import ChipVariants from "../../styles/chip/variants";
-import { ChipProps, ChipThemeProps } from "./types";
-import Ripple from "material-ripple-effects";
-import deepmerge from "deepmerge";
+import type { ChipProps, ChipThemeProps } from "./types";
 
 type Props = ChipProps & ChipThemeProps;
 
@@ -35,8 +35,8 @@ export const Chip = React.forwardRef<HTMLDivElement, Props>(
         size = size ?? themeProps?.defaultProps?.size;
         ripple = ripple ?? themeProps?.defaultProps?.ripple;
         classNames = deepmerge(
-            classNames,
             themeProps?.defaultProps?.classNames || {},
+            classNames || {},
         );
 
         const rippleEffect = ripple !== undefined && new Ripple();
@@ -55,15 +55,15 @@ export const Chip = React.forwardRef<HTMLDivElement, Props>(
                         "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
                         global?.borderRadius || "",
                         global?.transition || "",
-                        themeProps?.styles?.base || "",
                         sizeStyles,
+                        themeProps?.styles?.base || "",
                         themeProps?.styles?.sizes[size] || "",
                     ].join(" "),
                     Object.values(variantStyles)
                         .map((item) => item)
                         .join(" "),
                     themeProps?.styles?.variants[variant] || "",
-                    themeProps?.styles?.variants[color] || "",
+                    themeProps?.styles?.colors[color] || "",
                     className,
                     classNames?.element,
                 )}
