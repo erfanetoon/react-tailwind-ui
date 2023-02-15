@@ -56,14 +56,14 @@ export const Chip = React.forwardRef<HTMLDivElement, Props>(
                         global?.borderRadius || "",
                         global?.transition || "",
                         sizeStyles,
+                        Object.values(variantStyles)
+                            .map((item) => item)
+                            .join(" "),
                         themeProps?.styles?.base || "",
                         themeProps?.styles?.sizes[size] || "",
+                        themeProps?.styles?.variants[variant] || "",
+                        themeProps?.styles?.colors[color] || "",
                     ].join(" "),
-                    Object.values(variantStyles)
-                        .map((item) => item)
-                        .join(" "),
-                    themeProps?.styles?.variants[variant] || "",
-                    themeProps?.styles?.colors[color] || "",
                     className,
                     classNames?.element,
                 )}

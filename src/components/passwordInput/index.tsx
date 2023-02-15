@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import Input from "../input";
 import { InputProps, InputThemeProps } from "../input/types";
-import { useTheme } from "src/context";
+import { useTheme } from "../../context";
 import deepmerge from "deepmerge";
 
 type Props = InputProps & InputThemeProps;

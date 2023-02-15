@@ -57,15 +57,15 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
                         global?.borderRadius || "",
                         global?.transition || "",
                         sizeStyles,
+                        Object.values(variantStyles)
+                            .map((item) => item)
+                            .join(" "),
                         themeProps?.styles?.base || "",
                         themeProps?.styles?.sizes[size] || "",
+                        themeProps?.styles?.variants[variant] || "",
+                        themeProps?.styles?.colors[color] || "",
                         fullWidth ? "w-full" : "",
                     ].join(" "),
-                    Object.values(variantStyles)
-                        .map((item) => item)
-                        .join(" "),
-                    themeProps?.styles?.variants[variant] || "",
-                    themeProps?.styles?.colors[color] || "",
                     className,
                     classNames?.button,
                 )}
