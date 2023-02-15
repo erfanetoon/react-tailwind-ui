@@ -1,11 +1,11 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import Ripple from "material-ripple-effects";
+import deepmerge from "deepmerge";
 import { useTheme } from "../../context";
 import ButtonSizes from "../../styles/iconButton/sizes";
 import ButtonVariants from "../../styles/iconButton/variants";
-import { IconButtonProps, IconButtonThemeProps } from "./types";
-import Ripple from "material-ripple-effects";
-import deepmerge from "deepmerge";
+import type { IconButtonProps, IconButtonThemeProps } from "./types";
 
 type Props = IconButtonProps & IconButtonThemeProps;
 
@@ -53,15 +53,15 @@ export const IconButton = React.forwardRef<HTMLButtonElement, Props>(
                         "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
                         global?.borderRadius || "",
                         global?.transition || "",
-                        themeProps?.styles?.base || "",
                         sizeStyles,
+                        Object.values(variantStyles)
+                            .map((item) => item)
+                            .join(" "),
+                        themeProps?.styles?.base || "",
                         themeProps?.styles?.sizes[size] || "",
+                        themeProps?.styles?.variants[variant] || "",
+                        themeProps?.styles?.variants[color] || "",
                     ].join(" "),
-                    Object.values(variantStyles)
-                        .map((item) => item)
-                        .join(" "),
-                    themeProps?.styles?.variants[variant] || "",
-                    themeProps?.styles?.variants[color] || "",
                     className,
                     classNames?.button,
                 )}
