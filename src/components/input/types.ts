@@ -1,5 +1,5 @@
-import { ComponentProps } from "react";
-import { Colors, Sizes } from "../../types/global";
+import type { ComponentProps } from "react";
+import type { Colors, Sizes } from "../../types/global";
 
 export interface InputThemeProps {
     variant?: "default" | "outlined";

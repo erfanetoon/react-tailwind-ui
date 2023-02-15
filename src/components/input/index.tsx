@@ -1,11 +1,11 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import deepmerge from "deepmerge";
 import { useTheme } from "../../context";
-import { InputProps, InputThemeProps } from "./types";
 import InputSizes from "../../styles/input/sizes";
 import InputColors from "../../styles/input/colors";
 import InputVariants from "../../styles/input/variants";
-import deepmerge from "deepmerge";
+import type { InputProps, InputThemeProps } from "./types";
 
 type Props = InputProps & InputThemeProps;
 
@@ -76,19 +76,19 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
                                 "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
                                 global?.borderRadius || "",
                                 global?.transition || "",
-                                themeProps?.styles?.base || "",
                                 sizeStyles,
+                                variantStyles,
+                                Object.values(colorStyles)
+                                    .map((item) => item)
+                                    .join(" "),
+                                themeProps?.styles?.base || "",
                                 themeProps?.styles?.sizes[size] || "",
+                                themeProps?.styles?.colors[color] || "",
+                                themeProps?.styles?.variants[variant] || "",
+                                !!icon && iconPosition === "start" && "ps-8",
+                                !!icon && iconPosition === "end" && "pe-8",
+                                !!error && "border-red-500",
                             ].join(" "),
-                            Object.values(colorStyles)
-                                .map((item) => item)
-                                .join(" "),
-                            themeProps?.styles?.colors[color] || "",
-                            variantStyles,
-                            themeProps?.styles?.variants[variant] || "",
-                            !!icon && iconPosition === "start" && "ps-8",
-                            !!icon && iconPosition === "end" && "pe-8",
-                            !!error && "border-red-500",
                             className,
                             classNames?.input,
                         )}
