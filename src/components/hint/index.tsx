@@ -21,7 +21,7 @@ export const Hint = React.forwardRef<HTMLDivElement, Props>(
                 ref={ref}
                 className={twMerge(
                     [
-                        "p-4 border-2",
+                        "p-4 rtl:border-r-2 ltr:border-l-2",
                         global?.transition || "",
                         themeProps?.styles?.base || "",
                     ].join(" "),
