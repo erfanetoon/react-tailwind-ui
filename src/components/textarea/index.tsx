@@ -26,7 +26,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, Props>(
         },
         ref,
     ) => {
-        const { global, input: themeProps } = useTheme();
+        const { global, textarea: themeProps } = useTheme();
 
         color = color ?? global?.color;
         variant = variant ?? themeProps?.defaultProps?.variant;
