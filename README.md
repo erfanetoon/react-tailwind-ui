@@ -74,26 +74,10 @@ export default function Example() {
 ```
 
 ```jsx
-import { IconButton } from "@erfanetoon/react-tailwind-ui";
-
-export default function Example() {
-    return <IconButton>IconButton</IconButton>;
-}
-```
-
-```jsx
 import { Chip } from "@erfanetoon/react-tailwind-ui";
 
 export default function Example() {
     return <Chip>Chip</Chip>;
-}
-```
-
-```jsx
-import { Input } from "@erfanetoon/react-tailwind-ui";
-
-export default function Example() {
-    return <Input>Input</Input>;
 }
 ```
 
@@ -106,10 +90,42 @@ export default function Example() {
 ```
 
 ```jsx
+import { Hint } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <Hint>Hint</Hint>;
+}
+```
+
+```jsx
+import { IconButton } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <IconButton>IconButton</IconButton>;
+}
+```
+
+```jsx
+import { Input } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <Input>Input</Input>;
+}
+```
+
+```jsx
 import { PasswordInput } from "@erfanetoon/react-tailwind-ui";
 
 export default function Example() {
     return <PasswordInput>PasswordInput</PasswordInput>;
+}
+```
+
+```jsx
+import { Textarea } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <Textarea>Textarea</Textarea>;
 }
 ```
 

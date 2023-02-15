@@ -68,12 +68,6 @@ export interface ThemeContext {
     };
     passwordInput?: {
         defaultProps?: InputThemeProps;
-        styles?: {
-            base?: string;
-            colors?: Partial<Record<Colors, string>>;
-            sizes?: Partial<Record<Sizes, string>>;
-            variants?: Partial<Record<InputThemeProps["variant"], string>>;
-        };
     };
     textarea?: {
         defaultProps?: TextareaThemeProps;

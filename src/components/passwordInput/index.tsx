@@ -8,13 +8,15 @@ import deepmerge from "deepmerge";
 type Props = InputProps & InputThemeProps;
 
 export const PasswordInput = React.forwardRef<HTMLInputElement, Props>(
-    ({ classNames, ...inputProps }, ref) => {
+    ({ classNames, size, variant, ...inputProps }, ref) => {
         const [isShow, setIsShow] = useState(false);
 
         const { passwordInput: themeProps } = useTheme();
 
         return (
             <Input
+                size={size ?? themeProps?.defaultProps?.size}
+                variant={variant ?? themeProps?.defaultProps?.variant}
                 classNames={deepmerge(
                     themeProps?.defaultProps?.classNames || {},
                     classNames || {},
