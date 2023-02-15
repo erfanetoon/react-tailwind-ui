@@ -6,6 +6,7 @@
  */
 import React, { Component } from "react";
 import { twMerge } from "tailwind-merge";
+import deepmerge from "deepmerge";
 import CodeInputSizes from "../../styles/codeInput/sizes";
 import CodeInputVariants from "../../styles/codeInput/variants";
 import CodeInputColors from "../../styles/codeInput/colors";
