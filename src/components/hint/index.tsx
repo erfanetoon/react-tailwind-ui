@@ -23,12 +23,12 @@ export const Hint = React.forwardRef<HTMLDivElement, Props>(
                     [
                         "p-4 rtl:border-r-2 ltr:border-l-2",
                         global?.transition || "",
+                        Object.values(colorStyles)
+                            .map((item) => item)
+                            .join(" "),
                         themeProps?.styles?.base || "",
+                        themeProps?.styles?.colors[color] || "",
                     ].join(" "),
-                    Object.values(colorStyles)
-                        .map((item) => item)
-                        .join(" "),
-                    themeProps?.styles?.colors[color] || "",
                     className,
                 )}
             >
