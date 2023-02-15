@@ -1,11 +1,11 @@
 import React from "react";
+import Ripple from "material-ripple-effects";
+import deepmerge from "deepmerge";
 import { twMerge } from "tailwind-merge";
 import { useTheme } from "../../context";
 import ButtonSizes from "../../styles/button/sizes";
 import ButtonVariants from "../../styles/button/variants";
-import { ButtonProps, ButtonThemeProps } from "./types";
-import Ripple from "material-ripple-effects";
-import deepmerge from "deepmerge";
+import type { ButtonProps, ButtonThemeProps } from "./types";
 
 type Props = ButtonProps & ButtonThemeProps;
 
@@ -14,15 +14,15 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
         {
             variant,
             size,
-            color,
             ripple,
+            classNames,
+            color,
             fullWidth,
             loading,
             loadingIcon,
             icon,
             iconPosition = "start",
             className,
-            classNames,
             children,
             ...restProps
         },
@@ -54,18 +54,18 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
                     [
                         "inline-flex items-center justify-center cursor-pointer border font-medium align-middle",
                         "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
-                        fullWidth ? "w-full" : "",
                         global?.borderRadius || "",
                         global?.transition || "",
-                        themeProps?.styles?.base || "",
                         sizeStyles,
+                        themeProps?.styles?.base || "",
                         themeProps?.styles?.sizes[size] || "",
+                        fullWidth ? "w-full" : "",
                     ].join(" "),
                     Object.values(variantStyles)
                         .map((item) => item)
                         .join(" "),
                     themeProps?.styles?.variants[variant] || "",
-                    themeProps?.styles?.variants[color] || "",
+                    themeProps?.styles?.colors[color] || "",
                     className,
                     classNames?.button,
                 )}
