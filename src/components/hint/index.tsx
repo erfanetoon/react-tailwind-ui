@@ -1,8 +1,8 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { useTheme } from "../../context";
-import { HintProps, HintThemeProps } from "./types";
 import HintColors from "../../styles/hint/color";
+import type { HintProps, HintThemeProps } from "./types";
 
 type Props = HintProps & HintThemeProps;
 

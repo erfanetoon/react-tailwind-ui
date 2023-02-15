@@ -1,5 +1,5 @@
-import { ComponentProps } from "react";
-import { Colors } from "../../types/global";
+import type { ComponentProps } from "react";
+import type { Colors } from "../../types/global";
 
 export interface HintThemeProps {
     className?: string;

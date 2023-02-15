@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "../../context";
 import ClassComponent from "./component";
-import { CodeInputProps, CodeInputThemeProps } from "./types";
+import type { CodeInputProps, CodeInputThemeProps } from "./types";
 
 type Props = CodeInputProps & CodeInputThemeProps;
 
