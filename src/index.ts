@@ -7,3 +7,4 @@ export * from "./components/input";
 export * from "./components/hint";
 export * from "./components/passwordInput";
 export * from "./components/textarea";
+export * from "./components/tooltip";

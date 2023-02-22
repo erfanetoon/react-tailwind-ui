@@ -64,4 +64,11 @@ export const DefaultValue: ThemeContext = {
             classNames: {},
         },
     },
+    tooltip: {
+        defaultProps: {
+            classNames: {},
+            offset: 4,
+            placement: "top",
+        },
+    },
 };

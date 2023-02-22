@@ -6,6 +6,7 @@ import { ChipThemeProps } from "../components/chip/types";
 import { CodeInputThemeProps } from "../components/codeInput/types";
 import { TextareaThemeProps } from "src/components/textarea/types";
 import { HintThemeProps } from "src/components/hint/types";
+import { TooltipThemeProps } from "src/components/tooltip/types";
 
 export interface ThemeContext {
     global?: {
@@ -76,6 +77,12 @@ export interface ThemeContext {
             colors?: Partial<Record<Colors, string>>;
             sizes?: Partial<Record<Sizes, string>>;
             variants?: Partial<Record<TextareaThemeProps["variant"], string>>;
+        };
+    };
+    tooltip?: {
+        defaultProps?: TooltipThemeProps;
+        styles?: {
+            base?: string;
         };
     };
 }
