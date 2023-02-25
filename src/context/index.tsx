@@ -26,8 +26,13 @@ export const ThemeProvider: FC<Props & ThemeContext> = ({
     return (
         <Context.Provider value={{ ...data, handleChange }}>
             <section
-                dir={data.global?.direction}
-                className={`${data.global?.direction}`}
+                {...(data.global?.direction !== null ||
+                data.global?.direction !== undefined
+                    ? {
+                          dir: data.global?.direction,
+                          className: data.global?.direction,
+                      }
+                    : {})}
             >
                 {children}
             </section>

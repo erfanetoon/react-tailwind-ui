@@ -11,7 +11,7 @@ import { TooltipThemeProps } from "src/components/tooltip/types";
 export interface ThemeContext {
     global?: {
         color?: Colors;
-        direction?: "ltr" | "rtl";
+        direction?: "ltr" | "rtl" | null;
         transition?: string; // Default is 'transition-all duration-300'
         borderRadius?: string; // Must be tailwind class for example: rounded, rounded-sm, rounded-md, rounded-lg (default is 'rounded')
     };
