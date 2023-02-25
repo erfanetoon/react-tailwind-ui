@@ -1,6 +1,6 @@
 {
     "name": "@erfanetoon/react-tailwind-ui",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "Tailwindcss Components for React",
     "main": "index.js",
     "types": "index.d.ts",

@@ -8,7 +8,7 @@
   </a>
   
   <a href="https://github.com/erfanetoon/react-tailwind-ui/releases">
-    <img src="https://img.shields.io/badge/version-1.4.0-red.svg" alt="Version" />
+    <img src="https://img.shields.io/badge/version-1.4.1-red.svg" alt="Version" />
   </a>
 </p>
 
