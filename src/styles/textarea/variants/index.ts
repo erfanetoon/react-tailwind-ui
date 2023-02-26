@@ -1,4 +1,4 @@
-import { TextareaThemeProps } from "src/components/textarea/types";
+import { TextareaThemeProps } from "../../../components/textarea/types";
 
 const TextareaVariants: Record<TextareaThemeProps["variant"], string> = {
     default: "border",

@@ -4,7 +4,7 @@ import Filled from "./filled";
 import Outlined from "./outlined";
 import Gradient from "./gradient";
 import OutlinedFilled from "./outlined_filled";
-import { ChipThemeProps } from "src/components/chip/types";
+import { ChipThemeProps } from "../../../components/chip/types";
 
 const ChipVariants: Record<
     ChipThemeProps["variant"],

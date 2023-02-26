@@ -1,4 +1,4 @@
-import { Colors } from "src/types/global";
+import { Colors } from "../../../types/global";
 import Default from "./default";
 import Outlined from "./outlined";
 import { CodeInputThemeProps } from "../../../components/codeInput/types";

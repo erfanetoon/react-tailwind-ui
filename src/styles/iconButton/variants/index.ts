@@ -4,7 +4,7 @@ import Filled from "./filled";
 import Outlined from "./outlined";
 import Gradient from "./gradient";
 import OutlinedFilled from "./outlined_filled";
-import { IconButtonThemeProps } from "src/components/iconButton/types";
+import { IconButtonThemeProps } from "../../../components/iconButton/types";
 
 const IconButtonVariants: Record<
     IconButtonThemeProps["variant"],

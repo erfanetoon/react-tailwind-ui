@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import deepmerge from "deepmerge";
-import { useTheme } from "../../context";
 import {
     autoUpdate,
     useFloating,
@@ -11,6 +10,7 @@ import {
     FloatingPortal,
     useMergeRefs,
 } from "@floating-ui/react";
+import { useTheme } from "../../context";
 import type { TooltipProps, TooltipThemeProps } from "./types";
 
 type Props = TooltipProps & TooltipThemeProps;
@@ -31,14 +31,13 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
             classNames || {},
         );
 
-        const { x, y, strategy, reference, floating, refs, context } =
-            useFloating({
-                open: isOpen,
-                onOpenChange: setIsOpen,
-                whileElementsMounted: autoUpdate,
-                middleware: [offset(propsOffset)],
-                placement: placement,
-            });
+        const { x, y, strategy, reference, floating, context } = useFloating({
+            open: isOpen,
+            onOpenChange: setIsOpen,
+            whileElementsMounted: autoUpdate,
+            middleware: [offset(propsOffset)],
+            placement: placement,
+        });
 
         const hover = useHover(context, { move: false });
 
@@ -67,7 +66,6 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
                             // @ts-ignore
                             ...children?.props,
                             ref: childMergedRef,
-                            className: classNames?.element || "",
                         }),
                     })
                 )}

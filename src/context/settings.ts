@@ -30,6 +30,14 @@ export const DefaultValue: ThemeContext = {
             classNames: {},
         },
     },
+    dropdown: {
+        defaultProps: {
+            offset: 4,
+            placement: "bottomStart",
+            size: "md",
+            classNames: {},
+        },
+    },
     hint: {
         defaultProps: {
             className: "",

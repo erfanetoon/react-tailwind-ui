@@ -1,5 +1,5 @@
-import type { ComponentProps, ReactNode } from "react";
-import { Placement } from "@floating-ui/react";
+import type { ReactNode } from "react";
+import type { Placement } from "@floating-ui/react";
 
 export interface TooltipThemeProps {
     placement?: Placement;

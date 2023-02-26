@@ -4,9 +4,10 @@ import { IconButtonThemeProps } from "../components/iconButton/types";
 import { InputThemeProps } from "../components/input/types";
 import { ChipThemeProps } from "../components/chip/types";
 import { CodeInputThemeProps } from "../components/codeInput/types";
-import { TextareaThemeProps } from "src/components/textarea/types";
-import { HintThemeProps } from "src/components/hint/types";
-import { TooltipThemeProps } from "src/components/tooltip/types";
+import { TextareaThemeProps } from "../components/textarea/types";
+import { HintThemeProps } from "../components/hint/types";
+import { TooltipThemeProps } from "../components/tooltip/types";
+import { DropdownThemeProps } from "../components/dropdown/types";
 
 export interface ThemeContext {
     global?: {
@@ -40,6 +41,14 @@ export interface ThemeContext {
             colors?: Partial<Record<Colors, string>>;
             sizes?: Partial<Record<Sizes, string>>;
             variants?: Partial<Record<CodeInputThemeProps["variant"], string>>;
+        };
+    };
+    dropdown?: {
+        defaultProps?: DropdownThemeProps;
+        styles?: {
+            base?: string;
+            colors?: Partial<Record<Colors, string>>;
+            sizes?: Partial<Record<Sizes, string>>;
         };
     };
     hint?: {
