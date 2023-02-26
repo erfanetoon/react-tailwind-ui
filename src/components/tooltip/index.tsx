@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import deepmerge from "deepmerge";
 import { useTheme } from "../../context";
@@ -8,72 +8,95 @@ import {
     useInteractions,
     useHover,
     offset,
+    FloatingPortal,
+    useMergeRefs,
 } from "@floating-ui/react";
 import type { TooltipProps, TooltipThemeProps } from "./types";
 
 type Props = TooltipProps & TooltipThemeProps;
 
-export const Tooltip: FC<Props> = ({
-    placement,
-    offset: propsOffset,
-    classNames,
-    content,
-    children,
-}) => {
-    const [isOpen, setIsOpen] = useState(false);
+export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
+    (
+        { placement, offset: propsOffset, classNames, content, children },
+        ref,
+    ) => {
+        const [isOpen, setIsOpen] = useState(false);
 
-    const { global, tooltip: themeProps } = useTheme();
+        const { global, tooltip: themeProps } = useTheme();
 
-    propsOffset = propsOffset ?? themeProps?.defaultProps.offset;
-    placement = placement ?? themeProps?.defaultProps.placement;
-    classNames = deepmerge(
-        themeProps?.defaultProps?.classNames || {},
-        classNames || {},
-    );
+        propsOffset = propsOffset ?? themeProps?.defaultProps.offset;
+        placement = placement ?? themeProps?.defaultProps.placement;
+        classNames = deepmerge(
+            themeProps?.defaultProps?.classNames || {},
+            classNames || {},
+        );
 
-    const { x, y, strategy, refs, context } = useFloating({
-        open: isOpen,
-        onOpenChange: setIsOpen,
-        whileElementsMounted: autoUpdate,
-        middleware: [offset(propsOffset)],
-        placement: placement,
-    });
+        const { x, y, strategy, reference, floating, refs, context } =
+            useFloating({
+                open: isOpen,
+                onOpenChange: setIsOpen,
+                whileElementsMounted: autoUpdate,
+                middleware: [offset(propsOffset)],
+                placement: placement,
+            });
 
-    const hover = useHover(context);
+        const hover = useHover(context, { move: false });
 
-    const { getReferenceProps, getFloatingProps } = useInteractions([hover]);
+        const mergedRef = useMergeRefs([ref, floating]);
+        const childMergedRef = useMergeRefs([ref, reference]);
 
-    return (
-        <div className={twMerge("inline-block", classNames?.wrapper)}>
-            <div
-                className={twMerge(classNames?.element)}
-                ref={refs.setReference}
-                {...getReferenceProps()}
-            >
-                {children}
-            </div>
+        const { getReferenceProps, getFloatingProps } = useInteractions([
+            hover,
+        ]);
 
-            {isOpen && (
-                <div
-                    ref={refs.setFloating}
-                    className={twMerge(
-                        "bg-gray-700 px-2 py-1 text-sm text-white",
-                        global.borderRadius,
-                        global.transition,
-                        classNames?.tooltip,
+        return (
+            <>
+                {typeof children === "string" ? (
+                    <span
+                        {...getReferenceProps({
+                            ref: childMergedRef,
+                            className: classNames?.element || "",
+                        })}
+                    >
+                        {children}
+                    </span>
+                ) : (
+                    // @ts-ignore
+                    React.cloneElement(children, {
+                        ...getReferenceProps({
+                            // @ts-ignore
+                            ...children?.props,
+                            ref: childMergedRef,
+                            className: classNames?.element || "",
+                        }),
+                    })
+                )}
+
+                <FloatingPortal>
+                    {isOpen && (
+                        <div
+                            {...getFloatingProps({
+                                ref: mergedRef,
+                                className: twMerge(
+                                    "bg-gray-700 px-2 py-1 text-sm text-white",
+                                    global.borderRadius,
+                                    global.transition,
+                                    classNames?.tooltip,
+                                ),
+                                style: {
+                                    position: strategy,
+                                    top: y ?? "",
+                                    left: x ?? "",
+                                },
+                            })}
+                        >
+                            {content}
+                        </div>
                     )}
-                    style={{
-                        position: strategy,
-                        top: y ?? 0,
-                        left: x ?? 0,
-                    }}
-                    {...getFloatingProps()}
-                >
-                    {content}
-                </div>
-            )}
-        </div>
-    );
-};
+                </FloatingPortal>
+            </>
+        );
+    },
+);
 
 export default Tooltip;

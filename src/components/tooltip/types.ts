@@ -5,7 +5,6 @@ export interface TooltipThemeProps {
     placement?: Placement;
     offset?: number;
     classNames?: {
-        wrapper?: string;
         element?: string;
         tooltip?: string;
     };
