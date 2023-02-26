@@ -90,6 +90,14 @@ export default function Example() {
 ```
 
 ```jsx
+import { Dropdown } from "@erfanetoon/react-tailwind-ui";
+
+export default function Example() {
+    return <Dropdown>Dropdown</Dropdown>;
+}
+```
+
+```jsx
 import { Hint } from "@erfanetoon/react-tailwind-ui";
 
 export default function Example() {
