@@ -14,7 +14,7 @@ export interface InputThemeProps {
     };
 }
 
-export interface InputProps extends ComponentProps<"input"> {
+export interface InputProps extends Omit<ComponentProps<"input">, "size"> {
     color?: Colors;
     icon?: React.ReactNode;
     iconPosition?: "start" | "end";
