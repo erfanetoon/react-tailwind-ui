@@ -22,7 +22,6 @@ function withTailwind(tailwindConfig) {
                 fontSize: fontSizes.default,
                 screens: breakpoints.default,
             },
-            plugins: [require("tailwindcss-rtl")],
         },
         { ...tailwindConfig },
     );

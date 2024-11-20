@@ -5,6 +5,8 @@ export interface HintThemeProps {
     className?: string;
 }
 
-export interface HintProps extends ComponentProps<"div"> {
+export interface HintBaseProps extends ComponentProps<"div"> {
     color?: Colors;
 }
+
+export interface HintProps extends HintBaseProps, HintThemeProps {}

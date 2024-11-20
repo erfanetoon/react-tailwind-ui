@@ -11,11 +11,9 @@ import {
     useMergeRefs,
 } from "@floating-ui/react";
 import { useTheme } from "../../context";
-import type { TooltipProps, TooltipThemeProps } from "./types";
+import type { TooltipProps } from "./types";
 
-type Props = TooltipProps & TooltipThemeProps;
-
-export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
+export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
     (
         { placement, offset: propsOffset, classNames, content, children },
         ref,
@@ -31,7 +29,13 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
             classNames || {},
         );
 
-        const { x, y, strategy, reference, floating, context } = useFloating({
+        const {
+            x,
+            y,
+            strategy,
+            context,
+            refs: { floating, reference },
+        } = useFloating({
             open: isOpen,
             onOpenChange: setIsOpen,
             whileElementsMounted: autoUpdate,

@@ -1,8 +1,8 @@
 import type { ComponentProps } from "react";
-import type { Colors, Sizes } from "../../types/global";
+import type { Colors, InputVariants, Sizes } from "../../types/global";
 
 export interface InputThemeProps {
-    variant?: "default" | "outlined";
+    variant?: InputVariants;
     size?: Sizes;
     classNames?: {
         wrapper?: string;
@@ -14,10 +14,12 @@ export interface InputThemeProps {
     };
 }
 
-export interface InputProps extends Omit<ComponentProps<"input">, "size"> {
+export interface InputBaseProps extends Omit<ComponentProps<"input">, "size"> {
     color?: Colors;
     icon?: React.ReactNode;
     iconPosition?: "start" | "end";
     label?: string;
     error?: string;
 }
+
+export interface InputProps extends InputBaseProps, InputThemeProps {}

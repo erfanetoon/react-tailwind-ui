@@ -1,8 +1,8 @@
 import type { ComponentProps, MouseEventHandler } from "react";
-import type { Colors, Sizes } from "../../types/global";
+import type { ChipVariants, Colors, Sizes } from "../../types/global";
 
 export interface ChipThemeProps {
-    variant?: "text" | "filled" | "outlined" | "outlined_filled" | "gradient";
+    variant?: ChipVariants;
     size?: Sizes;
     ripple?: boolean;
     classNames?: {
@@ -12,7 +12,7 @@ export interface ChipThemeProps {
     };
 }
 
-export interface ChipProps extends ComponentProps<"div"> {
+export interface ChipBaseProps extends ComponentProps<"div"> {
     color?: Colors;
     loading?: boolean;
     loadingIcon?: React.ReactNode;
@@ -22,3 +22,5 @@ export interface ChipProps extends ComponentProps<"div"> {
         handleClickIcon?: MouseEventHandler<HTMLDivElement>;
     };
 }
+
+export interface ChipProps extends ChipBaseProps, ChipThemeProps {}

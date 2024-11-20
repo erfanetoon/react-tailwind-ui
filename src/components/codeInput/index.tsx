@@ -1,11 +1,9 @@
 import React from "react";
 import { useTheme } from "../../context";
 import ClassComponent from "./component";
-import type { CodeInputProps, CodeInputThemeProps } from "./types";
+import type { CodeInputProps } from "./types";
 
-type Props = CodeInputProps & CodeInputThemeProps;
-
-export const CodeInput = (props: Props) => {
+export const CodeInput = (props: CodeInputProps) => {
     const { global, codeInput: themeProps } = useTheme();
 
     return (

@@ -1,18 +1,15 @@
 import type { FC, MouseEventHandler, ReactNode } from "react";
-import type { Placement } from "@floating-ui/react";
-import type { Colors, Sizes } from "../../types/global";
+import type {
+    Colors,
+    DropdownTriggers,
+    DropdownPlacements,
+    Sizes,
+} from "../../types/global";
 
 export interface DropdownThemeProps {
     size?: Sizes;
-    placement?:
-        | "topStart"
-        | "topEnd"
-        | "bottomStart"
-        | "bottomEnd"
-        | "startBottom"
-        | "startTop"
-        | "endBottom"
-        | "endTop";
+    placement?: DropdownPlacements;
+
     offset?: number;
     classNames?: {
         wrapper?: string;
@@ -24,9 +21,9 @@ export interface DropdownThemeProps {
     };
 }
 
-export interface DropdownProps {
+export interface DropdownBaseProps {
     children: ReactNode;
-    trigger?: "click" | "hover";
+    trigger?: DropdownTriggers;
     color?: Colors;
     dropdownRender?: ReactNode;
     items?: Array<{
@@ -41,3 +38,5 @@ export interface DropdownProps {
         onClick?: MouseEventHandler<HTMLLIElement>;
     }>;
 }
+
+export interface DropdownProps extends DropdownBaseProps, DropdownThemeProps {}
