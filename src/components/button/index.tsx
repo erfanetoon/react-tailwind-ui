@@ -5,11 +5,9 @@ import { twMerge } from "tailwind-merge";
 import { useTheme } from "../../context";
 import ButtonSizes from "../../styles/button/sizes";
 import ButtonVariants from "../../styles/button/variants";
-import type { ButtonProps, ButtonThemeProps } from "./types";
+import type { ButtonProps } from "./types";
 
-type Props = ButtonProps & ButtonThemeProps;
-
-export const Button = React.forwardRef<HTMLButtonElement, Props>(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     (
         {
             variant,
@@ -60,6 +58,8 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
                         Object.values(variantStyles)
                             .map((item) => item)
                             .join(" "),
+                        global?.shadow?.base,
+                        global?.shadow?.hover,
                         themeProps?.styles?.base || "",
                         themeProps?.styles?.sizes[size] || "",
                         themeProps?.styles?.variants[variant] || "",

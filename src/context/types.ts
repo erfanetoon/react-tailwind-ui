@@ -13,6 +13,10 @@ export interface ThemeContext {
     global?: {
         color?: Colors;
         direction?: "ltr" | "rtl" | null;
+        shadow?: {
+            base: string; // Sample is 'shadow-md'
+            hover: string; // Sample is 'hover:shadow-md'
+        }; // Default is false
         transition?: string; // Default is 'transition-all duration-300'
         borderRadius?: string; // Must be tailwind class for example: rounded, rounded-sm, rounded-md, rounded-lg (default is 'rounded')
     };

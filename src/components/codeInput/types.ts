@@ -1,7 +1,13 @@
-import type { Colors, Sizes } from "../../types/global";
+import type {
+    CodeInputMode,
+    CodeInputType,
+    Colors,
+    InputVariants,
+    Sizes,
+} from "../../types/global";
 
 export interface CodeInputThemeProps {
-    variant?: "default" | "outlined";
+    variant?: InputVariants;
     size?: Sizes;
     classNames?: {
         wrapper?: string;
@@ -9,25 +15,13 @@ export interface CodeInputThemeProps {
     };
 }
 
-export interface CodeInputProps {
+export interface CodeInputBaseProps {
     id: string;
     name: string;
-    inputMode:
-        | "verbatim"
-        | "latin"
-        | "latin-name"
-        | "latin-prose"
-        | "full-width-latin"
-        | "kana"
-        | "kana-name"
-        | "katakana"
-        | "numeric"
-        | "tel"
-        | "email"
-        | "url";
+    inputMode: CodeInputMode;
     color?: Colors;
     error?: string;
-    type?: "text" | "number" | "password" | "tel";
+    type?: CodeInputType;
     fields?: number;
     placeholder?: string;
     value?: string;
@@ -46,3 +40,7 @@ export interface CodeInputProps {
     touch?: (name: string) => void;
     untouch?: (name: string) => void;
 }
+
+export interface CodeInputProps
+    extends CodeInputBaseProps,
+        CodeInputThemeProps {}

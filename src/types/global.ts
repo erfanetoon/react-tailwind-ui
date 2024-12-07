@@ -26,3 +26,47 @@ export type Colors =
     | "fuchsia"
     | "pink"
     | "rose";
+
+export type InputVariants = "default" | "outlined";
+
+export type ButtonVariants =
+    | "text"
+    | "filled"
+    | "outlined"
+    | "outlined_filled"
+    | "gradient";
+
+export type ChipVariants =
+    | "text"
+    | "filled"
+    | "outlined"
+    | "outlined_filled"
+    | "gradient";
+
+export type CodeInputMode =
+    | "verbatim"
+    | "latin"
+    | "latin-name"
+    | "latin-prose"
+    | "full-width-latin"
+    | "kana"
+    | "kana-name"
+    | "katakana"
+    | "numeric"
+    | "tel"
+    | "email"
+    | "url";
+
+export type CodeInputType = "text" | "number" | "password" | "tel";
+
+export type DropdownPlacements =
+    | "topStart"
+    | "topEnd"
+    | "bottomStart"
+    | "bottomEnd"
+    | "startBottom"
+    | "startTop"
+    | "endBottom"
+    | "endTop";
+
+export type DropdownTriggers = "click" | "hover";

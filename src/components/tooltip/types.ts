@@ -10,7 +10,9 @@ export interface TooltipThemeProps {
     };
 }
 
-export interface TooltipProps {
+export interface TooltipBaseProps {
     content: ReactNode;
     children: ReactNode;
 }
+
+export interface TooltipProps extends TooltipBaseProps, TooltipThemeProps {}

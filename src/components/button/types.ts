@@ -1,8 +1,8 @@
 import type { ComponentProps } from "react";
-import type { Colors, Sizes } from "../../types/global";
+import type { ButtonVariants, Colors, Sizes } from "../../types/global";
 
 export interface ButtonThemeProps {
-    variant?: "text" | "filled" | "outlined" | "outlined_filled" | "gradient";
+    variant?: ButtonVariants;
     size?: Sizes;
     ripple?: boolean;
     classNames?: {
@@ -12,7 +12,7 @@ export interface ButtonThemeProps {
     };
 }
 
-export interface ButtonProps extends ComponentProps<"button"> {
+export interface ButtonBaseProps extends ComponentProps<"button"> {
     color?: Colors;
     fullWidth?: boolean;
     loading?: boolean;
@@ -20,3 +20,5 @@ export interface ButtonProps extends ComponentProps<"button"> {
     icon?: React.ReactNode;
     iconPosition?: "start" | "end";
 }
+
+export interface ButtonProps extends ButtonBaseProps, ButtonThemeProps {}
