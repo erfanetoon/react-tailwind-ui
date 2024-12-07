@@ -57,6 +57,8 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
                         Object.values(variantStyles)
                             .map((item) => item)
                             .join(" "),
+                        global?.shadow?.base,
+                        global?.shadow?.hover,
                         themeProps?.styles?.base || "",
                         themeProps?.styles?.sizes[size] || "",
                         themeProps?.styles?.variants[variant] || "",
