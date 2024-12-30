@@ -1,6 +1,6 @@
 {
     "name": "@erfanetoon/react-tailwind-ui",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Tailwindcss Components for React",
     "main": "index.js",
     "types": "index.d.ts",
@@ -37,6 +37,7 @@
         "react-dom": "^16 || ^17 || ^18",
         "react-icons": "^5",
         "react-merge-refs": "^2",
+        "react-responsive": "^10",
         "tailwind-merge": "^2",
         "tailwindcss": "^3"
     },
@@ -65,6 +66,7 @@
         "react-dom": "^18.3.1",
         "react-icons": "^5.3.0",
         "react-merge-refs": "^2.1.1",
+        "react-responsive": "^10.0.0",
         "tailwind-merge": "^2.5.4",
         "tailwindcss": "^3.4.16",
         "typescript": "^5.6.3"
