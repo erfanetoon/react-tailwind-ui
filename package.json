@@ -6,13 +6,12 @@
     "types": "index.d.ts",
     "scripts": {
         "build:cjs": "swc ./src -d ./dist --config-file .swcrc",
-        "build:dts": "tsc --declaration --declarationMap --emitDeclarationOnly",
         "move:cjs": "mv ./dist/src/* ./dist/",
-        "copy": "cp ./package.json ./dist && cp ./README.md ./dist",
+        "build:dts": "tsc --declaration --declarationMap --emitDeclarationOnly",
         "build": "rm -rf ./dist && npm run build:cjs && npm run move:cjs && npm run build:dts",
+        "pre:publish": "cp ./package.json ./dist && cp ./README.md ./dist",
         "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
-        "prettier:check": "prettier -c .",
-        "dev": "npm run build && rm -rf ../faradid-web/node_modules/@erfanetoon/react-tailwind-ui && cp -rf dist ../faradid-web/node_modules/@erfanetoon/react-tailwind-ui"
+        "prettier:check": "prettier -c ."
     },
     "repository": {
         "type": "git",
