@@ -2,7 +2,7 @@
     "name": "@erfanetoon/react-tailwind-ui",
     "version": "2.0.0",
     "description": "Tailwindcss Components for React",
-    "main": "index.ts",
+    "main": "index.js",
     "types": "index.d.ts",
     "scripts": {
         "build:cjs": "swc ./src -d ./dist --config-file .swcrc",

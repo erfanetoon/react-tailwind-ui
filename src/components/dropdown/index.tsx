@@ -5,9 +5,9 @@ import { useTheme } from "../../context";
 import DropdownPlacements from "../../styles/dropdown/placements";
 import DropdownSizes from "../../styles/dropdown/sizes";
 import DropdownColors from "../../styles/dropdown/colors";
-import type { DropdownProps } from "./types";
+import type { IDropdownProps } from "./types";
 
-export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
+export const Dropdown = React.forwardRef<HTMLDivElement, IDropdownProps>(
     (
         {
             placement,

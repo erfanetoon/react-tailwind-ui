@@ -1,27 +1,27 @@
 import type {
-    CodeInputMode,
-    CodeInputType,
-    Colors,
-    InputVariants,
-    Sizes,
+    TCodeInputMode,
+    TCodeInputType,
+    TColors,
+    TInputVariants,
+    TSizes,
 } from "../../types/global";
 
-export interface CodeInputThemeProps {
-    variant?: InputVariants;
-    size?: Sizes;
+export interface ICodeInputThemeProps {
+    variant?: TInputVariants;
+    size?: TSizes;
     classNames?: {
         wrapper?: string;
         input?: string;
     };
 }
 
-export interface CodeInputBaseProps {
+export interface ICodeInputBaseProps {
     id: string;
     name: string;
-    inputMode: CodeInputMode;
-    color?: Colors;
+    inputMode: TCodeInputMode;
+    color?: TColors;
     error?: string;
-    type?: CodeInputType;
+    type?: TCodeInputType;
     fields?: number;
     placeholder?: string;
     value?: string;
@@ -41,6 +41,6 @@ export interface CodeInputBaseProps {
     untouch?: (name: string) => void;
 }
 
-export interface CodeInputProps
-    extends CodeInputBaseProps,
-        CodeInputThemeProps {}
+export interface ICodeInputProps
+    extends ICodeInputBaseProps,
+        ICodeInputThemeProps {}

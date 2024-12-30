@@ -1,12 +1,12 @@
 import type { ComponentProps } from "react";
-import type { Colors } from "../../types/global";
+import type { TColors } from "../../types/global";
 
-export interface HintThemeProps {
+export interface IHintThemeProps {
     className?: string;
 }
 
-export interface HintBaseProps extends ComponentProps<"div"> {
-    color?: Colors;
+export interface IHintBaseProps extends ComponentProps<"div"> {
+    color?: TColors;
 }
 
-export interface HintProps extends HintBaseProps, HintThemeProps {}
+export interface IHintProps extends IHintBaseProps, IHintThemeProps {}

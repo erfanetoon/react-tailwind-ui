@@ -1,9 +1,9 @@
 import type { ComponentProps } from "react";
-import type { Colors, InputVariants, Sizes } from "../../types/global";
+import type { TColors, TInputVariants, TSizes } from "../../types/global";
 
-export interface TextareaThemeProps {
-    variant?: InputVariants;
-    size?: Sizes;
+export interface ITextareaThemeProps {
+    variant?: TInputVariants;
+    size?: TSizes;
     classNames?: {
         wrapper?: string;
         root?: string;
@@ -14,12 +14,14 @@ export interface TextareaThemeProps {
     };
 }
 
-export interface TextareaBaseProps extends ComponentProps<"textarea"> {
-    color?: Colors;
+export interface ITextareaBaseProps extends ComponentProps<"textarea"> {
+    color?: TColors;
     icon?: React.ReactNode;
     iconPosition?: "start" | "end";
     label?: string;
     error?: string;
 }
 
-export interface TextareaProps extends TextareaBaseProps, TextareaThemeProps {}
+export interface ITextareaProps
+    extends ITextareaBaseProps,
+        ITextareaThemeProps {}
