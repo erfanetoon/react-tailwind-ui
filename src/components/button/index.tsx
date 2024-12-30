@@ -5,9 +5,9 @@ import { twMerge } from "tailwind-merge";
 import { useTheme } from "../../context";
 import ButtonSizes from "../../styles/button/sizes";
 import ButtonVariants from "../../styles/button/variants";
-import type { ButtonProps } from "./types";
+import type { IButtonProps } from "./types";
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
     (
         {
             variant,

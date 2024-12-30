@@ -5,9 +5,9 @@ import deepmerge from "deepmerge";
 import { useTheme } from "../../context";
 import ChipSizes from "../../styles/chip/sizes";
 import ChipVariants from "../../styles/chip/variants";
-import type { ChipProps } from "./types";
+import type { IChipProps } from "./types";
 
-export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
+export const Chip = React.forwardRef<HTMLDivElement, IChipProps>(
     (
         {
             variant,

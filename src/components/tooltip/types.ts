@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { Placement } from "@floating-ui/react";
 
-export interface TooltipThemeProps {
+export interface ITooltipThemeProps {
     placement?: Placement;
     offset?: number;
     classNames?: {
@@ -10,9 +10,9 @@ export interface TooltipThemeProps {
     };
 }
 
-export interface TooltipBaseProps {
+export interface ITooltipBaseProps {
     content: ReactNode;
     children: ReactNode;
 }
 
-export interface TooltipProps extends TooltipBaseProps, TooltipThemeProps {}
+export interface ITooltipProps extends ITooltipBaseProps, ITooltipThemeProps {}

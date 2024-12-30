@@ -1,9 +1,9 @@
 import type { ComponentProps, MouseEventHandler } from "react";
-import type { ChipVariants, Colors, Sizes } from "../../types/global";
+import type { TChipVariants, TColors, TSizes } from "../../types/global";
 
-export interface ChipThemeProps {
-    variant?: ChipVariants;
-    size?: Sizes;
+export interface IChipThemeProps {
+    variant?: TChipVariants;
+    size?: TSizes;
     ripple?: boolean;
     classNames?: {
         element?: string;
@@ -12,8 +12,8 @@ export interface ChipThemeProps {
     };
 }
 
-export interface ChipBaseProps extends ComponentProps<"div"> {
-    color?: Colors;
+export interface IChipBaseProps extends ComponentProps<"div"> {
+    color?: TColors;
     loading?: boolean;
     loadingIcon?: React.ReactNode;
     icon?: React.ReactNode;
@@ -23,4 +23,4 @@ export interface ChipBaseProps extends ComponentProps<"div"> {
     };
 }
 
-export interface ChipProps extends ChipBaseProps, ChipThemeProps {}
+export interface IChipProps extends IChipBaseProps, IChipThemeProps {}

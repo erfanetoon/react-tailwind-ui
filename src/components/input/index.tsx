@@ -5,9 +5,9 @@ import { useTheme } from "../../context";
 import InputSizes from "../../styles/input/sizes";
 import InputColors from "../../styles/input/colors";
 import InputVariants from "../../styles/input/variants";
-import type { InputProps } from "./types";
+import type { IInputProps } from "./types";
 
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+export const Input = React.forwardRef<HTMLInputElement, IInputProps>(
     (
         {
             variant,

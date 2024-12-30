@@ -1,6 +1,6 @@
-export type Sizes = "xs" | "sm" | "md" | "lg" | "xl";
+export type TSizes = "xs" | "sm" | "md" | "lg" | "xl";
 
-export type Colors =
+export type TColors =
     | "primary"
     | "secondary"
     | "tertiary"
@@ -27,23 +27,23 @@ export type Colors =
     | "pink"
     | "rose";
 
-export type InputVariants = "default" | "outlined";
+export type TInputVariants = "default" | "outlined";
 
-export type ButtonVariants =
+export type TButtonVariants =
     | "text"
     | "filled"
     | "outlined"
     | "outlined_filled"
     | "gradient";
 
-export type ChipVariants =
+export type TChipVariants =
     | "text"
     | "filled"
     | "outlined"
     | "outlined_filled"
     | "gradient";
 
-export type CodeInputMode =
+export type TCodeInputMode =
     | "verbatim"
     | "latin"
     | "latin-name"
@@ -57,9 +57,9 @@ export type CodeInputMode =
     | "email"
     | "url";
 
-export type CodeInputType = "text" | "number" | "password" | "tel";
+export type TCodeInputType = "text" | "number" | "password" | "tel";
 
-export type DropdownPlacements =
+export type TDropdownPlacements =
     | "topStart"
     | "topEnd"
     | "bottomStart"
@@ -69,4 +69,4 @@ export type DropdownPlacements =
     | "endBottom"
     | "endTop";
 
-export type DropdownTriggers = "click" | "hover";
+export type TDropdownTriggers = "click" | "hover";

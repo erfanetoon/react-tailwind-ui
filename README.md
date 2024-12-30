@@ -8,13 +8,13 @@
   </a>
   
   <a href="https://github.com/erfanetoon/react-tailwind-ui/releases">
-    <img src="https://img.shields.io/badge/version-1.5.2-red.svg" alt="Version" />
+    <img src="https://img.shields.io/badge/version-2.0.1-red.svg" alt="Version" />
   </a>
 </p>
 
 ### Getting Started
 
-react-tailwind-ui is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/installation/framework-guides" target="_blank">Tailwind CSS Installation.</a>
+react-tailwind-ui is working with Tailwind CSS classes - <a href="https://tailwindcss.com/docs/installation/framework-guides" target="_blank">Tailwind CSS Installation.</a>
 
 <br />
 
@@ -29,7 +29,7 @@ npm i @erfanetoon/react-tailwind-ui
 2. Once you install @erfanetoon/react-tailwind-ui you need to wrap your tailwind css configurations with the `withTailwind()` function coming from @erfanetoon/react-tailwind-ui.
 
 ```js
-const withTailwind = require("@erfanetoon/react-tailwind-ui/withTailwind");
+const { withTailwind } = require("@erfanetoon/react-tailwind-ui/withTailwind");
 
 module.exports = withTailwind({
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -296,6 +296,49 @@ theme: {
 },
 ```
 
-## `tailwindcss-rtl` library
+## Hooks
 
-We use this library built-in and you can use its classes in your app
+We provide some hooks to help you code better
+
+#### useResponsive
+
+This hook help you to calculate the active window system and the values that return to us are sync with `breakpoints` in tailwind config
+
+```jsx
+import { useResponsive } from "@erfanetoon/react-tailwind-ui";
+
+const AppComponent = () => {
+    const { isXxs, isXs, isSm, isMd, isLg, isXl, isXxl } = useResponsive();
+
+    return;
+    <>
+        isXxs: {isXxs}
+        <br />
+        isXs: {isXs}
+        <br />
+        isSm: {isSm}
+        <br />
+        isMd: {isMd}
+        <br />
+        isLg: {isLg}
+        <br />
+        isXl: {isXl}
+        <br />
+        isXxl: {isXxl}
+    </>;
+};
+
+export default AppComponent;
+```
+
+## Typescript
+
+This library is based on `typescript ^v5` and every section of it has own types and all available types return to use theme
+
+## Contribute
+
+For contribute in this library you must create an issue first and describe all of your changes there and after that fork this library and apply your changes and then creat ea pull request and notice me on that issue,
+
+```
+Don't forget to add your name in `CONTRIBUTORS.md` file
+```

@@ -6,38 +6,38 @@ export type * from "./types/global";
 
 // Theme context
 export * from "./context";
-export type { ThemeContext, ThemeAction } from "./context/types";
+export type { IThemeContext, TThemeAction } from "./context/types";
 
 // Our tailwind base config
 export { default as withTailwind } from "./withTailwind";
 
+// Configs
+export * from "./config/breakpoints";
+export * from "./config/colors";
+export * from "./config/fontSizes";
+export * from "./config/shadows";
+
 // Components
 export * from "./components/button";
-export type { ButtonProps } from "./components/button/types";
-
+export type { IButtonProps } from "./components/button/types";
 export * from "./components/chip";
-export type { ChipProps } from "./components/chip/types";
-
+export type { IChipProps } from "./components/chip/types";
 export * from "./components/codeInput";
-export type { CodeInputProps } from "./components/codeInput/types";
-
+export type { ICodeInputProps } from "./components/codeInput/types";
 export * from "./components/dropdown";
-export type { DropdownProps } from "./components/dropdown/types";
-
+export type { IDropdownProps } from "./components/dropdown/types";
 export * from "./components/iconButton";
-export type { IconButtonProps } from "./components/iconButton/types";
-
+export type { IIconButtonProps } from "./components/iconButton/types";
 export * from "./components/input";
-export type { InputProps } from "./components/input/types";
-
+export type { IInputProps } from "./components/input/types";
 export * from "./components/hint";
-export type { HintProps } from "./components/hint/types";
-
+export type { IHintProps } from "./components/hint/types";
 export * from "./components/passwordInput";
-export type { PasswordInputProps } from "./components/passwordInput/types";
-
+export type { IPasswordInputProps } from "./components/passwordInput/types";
 export * from "./components/textarea";
-export type { TextareaProps } from "./components/textarea/types";
-
+export type { ITextareaProps } from "./components/textarea/types";
 export * from "./components/tooltip";
-export type { TooltipProps } from "./components/tooltip/types";
+export type { ITooltipProps } from "./components/tooltip/types";
+
+// Hooks
+export * from "./hooks/useResponsive";

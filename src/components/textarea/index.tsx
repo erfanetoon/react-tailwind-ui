@@ -5,9 +5,9 @@ import { useTheme } from "../../context";
 import TextareaSizes from "../../styles/textarea/sizes";
 import TextareaColors from "../../styles/textarea/colors";
 import TextareaVariants from "../../styles/textarea/variants";
-import type { TextareaProps } from "./types";
+import type { ITextareaProps } from "./types";
 
-export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+export const Textarea = React.forwardRef<HTMLTextAreaElement, ITextareaProps>(
     (
         {
             variant,

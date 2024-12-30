@@ -1,15 +1,14 @@
 import type { FC, MouseEventHandler, ReactNode } from "react";
 import type {
-    Colors,
-    DropdownTriggers,
-    DropdownPlacements,
-    Sizes,
+    TColors,
+    TDropdownTriggers,
+    TDropdownPlacements,
+    TSizes,
 } from "../../types/global";
 
-export interface DropdownThemeProps {
-    size?: Sizes;
-    placement?: DropdownPlacements;
-
+export interface IDropdownThemeProps {
+    size?: TSizes;
+    placement?: TDropdownPlacements;
     offset?: number;
     classNames?: {
         wrapper?: string;
@@ -21,16 +20,16 @@ export interface DropdownThemeProps {
     };
 }
 
-export interface DropdownBaseProps {
+export interface IDropdownBaseProps {
     children: ReactNode;
-    trigger?: DropdownTriggers;
-    color?: Colors;
+    trigger?: TDropdownTriggers;
+    color?: TColors;
     dropdownRender?: ReactNode;
     items?: Array<{
         label?: ReactNode;
         icon?: ReactNode;
-        color?: Colors;
-        size?: Sizes;
+        color?: TColors;
+        size?: TSizes;
         disabled?: boolean;
         active?: boolean;
         customRender?: FC;
@@ -39,4 +38,6 @@ export interface DropdownBaseProps {
     }>;
 }
 
-export interface DropdownProps extends DropdownBaseProps, DropdownThemeProps {}
+export interface IDropdownProps
+    extends IDropdownBaseProps,
+        IDropdownThemeProps {}

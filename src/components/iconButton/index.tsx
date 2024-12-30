@@ -5,9 +5,9 @@ import deepmerge from "deepmerge";
 import { useTheme } from "../../context";
 import ButtonSizes from "../../styles/iconButton/sizes";
 import ButtonVariants from "../../styles/iconButton/variants";
-import type { IconButtonProps } from "./types";
+import type { IIconButtonProps } from "./types";
 
-export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+export const IconButton = React.forwardRef<HTMLButtonElement, IIconButtonProps>(
     (
         {
             variant,

@@ -1,3 +1,3 @@
-import { InputProps } from "../input/types";
+import { IInputProps } from "../input/types";
 
-export interface PasswordInputProps extends InputProps {}
+export interface IPasswordInputProps extends IInputProps {}

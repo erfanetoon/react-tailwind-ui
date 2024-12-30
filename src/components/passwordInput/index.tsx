@@ -3,11 +3,11 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import Input from "../input";
 import { useTheme } from "../../context";
 import deepmerge from "deepmerge";
-import { PasswordInputProps } from "./types";
+import { IPasswordInputProps } from "./types";
 
 export const PasswordInput = React.forwardRef<
     HTMLInputElement,
-    PasswordInputProps
+    IPasswordInputProps
 >(({ classNames, size, variant, ...inputProps }, ref) => {
     const [isShow, setIsShow] = useState(false);
 

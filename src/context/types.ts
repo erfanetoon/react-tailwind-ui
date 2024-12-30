@@ -1,17 +1,17 @@
-import { Colors, Sizes } from "../types/global";
-import { ButtonThemeProps } from "../components/button/types";
-import { IconButtonThemeProps } from "../components/iconButton/types";
-import { InputThemeProps } from "../components/input/types";
-import { ChipThemeProps } from "../components/chip/types";
-import { CodeInputThemeProps } from "../components/codeInput/types";
-import { TextareaThemeProps } from "../components/textarea/types";
-import { HintThemeProps } from "../components/hint/types";
-import { TooltipThemeProps } from "../components/tooltip/types";
-import { DropdownThemeProps } from "../components/dropdown/types";
+import { TColors, TSizes } from "../types/global";
+import { IButtonThemeProps } from "../components/button/types";
+import { IIconButtonThemeProps } from "../components/iconButton/types";
+import { IInputThemeProps } from "../components/input/types";
+import { IChipThemeProps } from "../components/chip/types";
+import { ICodeInputThemeProps } from "../components/codeInput/types";
+import { ITextareaThemeProps } from "../components/textarea/types";
+import { IHintThemeProps } from "../components/hint/types";
+import { ITooltipThemeProps } from "../components/tooltip/types";
+import { IDropdownThemeProps } from "../components/dropdown/types";
 
-export interface ThemeContext {
+export interface IThemeContext {
     global?: {
-        color?: Colors;
+        color?: TColors;
         direction?: "ltr" | "rtl" | null;
         shadow?: {
             base: string; // Sample is 'shadow-md'
@@ -21,83 +21,85 @@ export interface ThemeContext {
         borderRadius?: string; // Must be tailwind class for example: rounded, rounded-sm, rounded-md, rounded-lg (default is 'rounded')
     };
     button?: {
-        defaultProps?: ButtonThemeProps;
+        defaultProps?: IButtonThemeProps;
         styles?: {
             base?: string;
-            colors?: Partial<Record<Colors, string>>;
-            sizes?: Partial<Record<Sizes, string>>;
-            variants?: Partial<Record<ButtonThemeProps["variant"], string>>;
+            colors?: Partial<Record<TColors, string>>;
+            sizes?: Partial<Record<TSizes, string>>;
+            variants?: Partial<Record<IButtonThemeProps["variant"], string>>;
         };
     };
     chip?: {
-        defaultProps?: ChipThemeProps;
+        defaultProps?: IChipThemeProps;
         styles?: {
             base?: string;
-            colors?: Partial<Record<Colors, string>>;
-            sizes?: Partial<Record<Sizes, string>>;
-            variants?: Partial<Record<ChipThemeProps["variant"], string>>;
+            colors?: Partial<Record<TColors, string>>;
+            sizes?: Partial<Record<TSizes, string>>;
+            variants?: Partial<Record<IChipThemeProps["variant"], string>>;
         };
     };
     codeInput?: {
-        defaultProps?: CodeInputThemeProps;
+        defaultProps?: ICodeInputThemeProps;
         styles?: {
             base?: string;
-            colors?: Partial<Record<Colors, string>>;
-            sizes?: Partial<Record<Sizes, string>>;
-            variants?: Partial<Record<CodeInputThemeProps["variant"], string>>;
+            colors?: Partial<Record<TColors, string>>;
+            sizes?: Partial<Record<TSizes, string>>;
+            variants?: Partial<Record<ICodeInputThemeProps["variant"], string>>;
         };
     };
     dropdown?: {
-        defaultProps?: DropdownThemeProps;
+        defaultProps?: IDropdownThemeProps;
         styles?: {
             base?: string;
-            colors?: Partial<Record<Colors, string>>;
-            sizes?: Partial<Record<Sizes, string>>;
+            colors?: Partial<Record<TColors, string>>;
+            sizes?: Partial<Record<TSizes, string>>;
         };
     };
     hint?: {
-        defaultProps?: HintThemeProps;
+        defaultProps?: IHintThemeProps;
         styles?: {
             base?: string;
-            colors?: Partial<Record<Colors, string>>;
+            colors?: Partial<Record<TColors, string>>;
         };
     };
     iconButton?: {
-        defaultProps?: IconButtonThemeProps;
+        defaultProps?: IIconButtonThemeProps;
         styles?: {
             base?: string;
-            colors?: Partial<Record<Colors, string>>;
-            sizes?: Partial<Record<Sizes, string>>;
-            variants?: Partial<Record<IconButtonThemeProps["variant"], string>>;
+            colors?: Partial<Record<TColors, string>>;
+            sizes?: Partial<Record<TSizes, string>>;
+            variants?: Partial<
+                Record<IIconButtonThemeProps["variant"], string>
+            >;
         };
     };
     input?: {
-        defaultProps?: InputThemeProps;
+        defaultProps?: IInputThemeProps;
         styles?: {
             base?: string;
-            colors?: Partial<Record<Colors, string>>;
-            sizes?: Partial<Record<Sizes, string>>;
-            variants?: Partial<Record<InputThemeProps["variant"], string>>;
+            colors?: Partial<Record<TColors, string>>;
+            sizes?: Partial<Record<TSizes, string>>;
+            variants?: Partial<Record<IInputThemeProps["variant"], string>>;
         };
     };
     passwordInput?: {
-        defaultProps?: InputThemeProps;
+        defaultProps?: IInputThemeProps;
     };
     textarea?: {
-        defaultProps?: TextareaThemeProps;
+        defaultProps?: ITextareaThemeProps;
         styles?: {
             base?: string;
-            colors?: Partial<Record<Colors, string>>;
-            sizes?: Partial<Record<Sizes, string>>;
-            variants?: Partial<Record<TextareaThemeProps["variant"], string>>;
+            colors?: Partial<Record<TColors, string>>;
+            sizes?: Partial<Record<TSizes, string>>;
+            variants?: Partial<Record<ITextareaThemeProps["variant"], string>>;
         };
     };
     tooltip?: {
-        defaultProps?: TooltipThemeProps;
+        defaultProps?: ITooltipThemeProps;
         styles?: {
             base?: string;
         };
     };
 }
 
-export type ThemeAction = (data: ThemeContext) => void;
+export type TThemeAction = (data: IThemeContext) => void;

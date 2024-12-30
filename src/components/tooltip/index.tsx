@@ -11,9 +11,9 @@ import {
     useMergeRefs,
 } from "@floating-ui/react";
 import { useTheme } from "../../context";
-import type { TooltipProps } from "./types";
+import type { ITooltipProps } from "./types";
 
-export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
+export const Tooltip = React.forwardRef<HTMLDivElement, ITooltipProps>(
     (
         { placement, offset: propsOffset, classNames, content, children },
         ref,

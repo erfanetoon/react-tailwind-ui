@@ -1,4 +1,4 @@
-const fontSizes = {
+export const fontSizes = {
     xs: ["0.625rem", "0.75rem"],
     sm: ["0.75rem", "1rem"],
     base: ["0.875rem", "1.25rem"],

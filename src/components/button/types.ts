@@ -1,9 +1,9 @@
 import type { ComponentProps } from "react";
-import type { ButtonVariants, Colors, Sizes } from "../../types/global";
+import type { TButtonVariants, TColors, TSizes } from "../../types/global";
 
-export interface ButtonThemeProps {
-    variant?: ButtonVariants;
-    size?: Sizes;
+export interface IButtonThemeProps {
+    variant?: TButtonVariants;
+    size?: TSizes;
     ripple?: boolean;
     classNames?: {
         button?: string;
@@ -12,8 +12,8 @@ export interface ButtonThemeProps {
     };
 }
 
-export interface ButtonBaseProps extends ComponentProps<"button"> {
-    color?: Colors;
+export interface IButtonBaseProps extends ComponentProps<"button"> {
+    color?: TColors;
     fullWidth?: boolean;
     loading?: boolean;
     loadingIcon?: React.ReactNode;
@@ -21,4 +21,4 @@ export interface ButtonBaseProps extends ComponentProps<"button"> {
     iconPosition?: "start" | "end";
 }
 
-export interface ButtonProps extends ButtonBaseProps, ButtonThemeProps {}
+export interface IButtonProps extends IButtonBaseProps, IButtonThemeProps {}

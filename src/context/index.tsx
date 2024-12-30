@@ -1,25 +1,25 @@
 import React from "react";
 import { createContext, FC, ReactNode, useContext, useState } from "react";
 import { DefaultValue } from "./settings";
-import { ThemeAction, ThemeContext } from "./types";
+import { TThemeAction, IThemeContext } from "./types";
 import deepmerge from "deepmerge";
 
 interface Props {
     children: ReactNode;
 }
 
-const Context = createContext<ThemeContext & { handleChange: ThemeAction }>({
+const Context = createContext<IThemeContext & { handleChange: TThemeAction }>({
     ...DefaultValue,
     handleChange: () => {},
 });
 
-export const ThemeProvider: FC<Props & ThemeContext> = ({
+export const ThemeProvider: FC<Props & IThemeContext> = ({
     children,
     ...incomingData
 }) => {
     const [data, setData] = useState(deepmerge(DefaultValue, incomingData));
 
-    const handleChange: ThemeAction = (newData) => {
+    const handleChange: TThemeAction = (newData) => {
         setData(deepmerge(data, newData));
     };
 
