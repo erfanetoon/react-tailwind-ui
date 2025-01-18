@@ -1,6 +1,6 @@
-import { ThemeContext } from "./types";
+import { IThemeContext } from "./types";
 
-export const DefaultValue: ThemeContext = {
+export const DefaultValue: IThemeContext = {
     global: {
         color: "primary",
         direction: "ltr",
@@ -58,10 +58,22 @@ export const DefaultValue: ThemeContext = {
             classNames: {},
         },
     },
+    modal: {
+        defaultProps: {
+            size: "md",
+            classNames: {},
+        },
+    },
     passwordInput: {
         defaultProps: {
             size: "md",
             variant: "default",
+            classNames: {},
+        },
+    },
+    switch: {
+        defaultProps: {
+            size: "md",
             classNames: {},
         },
     },

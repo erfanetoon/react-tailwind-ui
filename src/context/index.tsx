@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createContext, FC, ReactNode, useContext, useState } from "react";
+import deepmerge from "deepmerge";
 import { DefaultValue } from "./settings";
 import { TThemeAction, IThemeContext } from "./types";
-import deepmerge from "deepmerge";
 
 interface Props {
     children: ReactNode;
@@ -19,23 +19,22 @@ export const ThemeProvider: FC<Props & IThemeContext> = ({
 }) => {
     const [data, setData] = useState(deepmerge(DefaultValue, incomingData));
 
+    useEffect(() => {
+        const elements = document.getElementsByTagName("body");
+
+        if (!elements[0]) return;
+
+        elements[0].setAttribute("dir", data.global?.direction);
+        elements[0].setAttribute("class", data.global?.direction);
+    }, [data.global?.direction]);
+
     const handleChange: TThemeAction = (newData) => {
         setData(deepmerge(data, newData));
     };
 
     return (
         <Context.Provider value={{ ...data, handleChange }}>
-            <section
-                {...(data.global?.direction !== null ||
-                data.global?.direction !== undefined
-                    ? {
-                          dir: data.global?.direction,
-                          className: data.global?.direction,
-                      }
-                    : {})}
-            >
-                {children}
-            </section>
+            {children}
         </Context.Provider>
     );
 };
