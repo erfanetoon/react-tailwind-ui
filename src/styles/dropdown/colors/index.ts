@@ -1,7 +1,7 @@
-import { Colors } from "../../../types/global";
+import { TColors } from "~types/global";
 
 const DropdownColors: Record<
-    Colors,
+    TColors,
     { target: string; item: string; icon: string }
 > = {
     primary: {

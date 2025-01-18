@@ -7,9 +7,9 @@
 import React, { Component } from "react";
 import { twMerge } from "tailwind-merge";
 import deepmerge from "deepmerge";
-import CodeInputSizes from "../../styles/codeInput/sizes";
-import CodeInputVariants from "../../styles/codeInput/variants";
-import CodeInputColors from "../../styles/codeInput/colors";
+import CodeInputSizes from "~styles/codeInput/sizes";
+import CodeInputVariants from "~styles/codeInput/variants";
+import CodeInputColors from "~styles/codeInput/colors";
 
 const BACKSPACE_KEY = 8;
 const LEFT_ARROW_KEY = 37;
@@ -129,9 +129,9 @@ class ClassComponent extends Component {
 
             const newTarget =
                 this.textInput[
-                    e.target.dataset.id < input.length
-                        ? Number(e.target.dataset.id) + 1
-                        : e.target.dataset.id
+                e.target.dataset.id < input.length
+                    ? Number(e.target.dataset.id) + 1
+                    : e.target.dataset.id
                 ];
 
             if (newTarget) {
@@ -227,20 +227,20 @@ class ClassComponent extends Component {
 
     render() {
         const {
-                type,
-                autoFocus,
-                autoComplete,
-                pattern,
-                inputMode,
-                placeholder,
-                classNames,
-                variant,
-                error,
-                color,
-                size,
-                global,
-                themeProps,
-            } = this.props,
+            type,
+            autoFocus,
+            autoComplete,
+            pattern,
+            inputMode,
+            placeholder,
+            classNames,
+            variant,
+            error,
+            color,
+            size,
+            global,
+            themeProps,
+        } = this.props,
             { disabled, input, isValid } = this.state;
 
         const localColor = color ?? global?.color;
@@ -284,10 +284,10 @@ class ClassComponent extends Component {
                                     themeProps?.styles?.base || "",
                                     themeProps?.styles?.sizes[localSize] || "",
                                     themeProps?.styles?.variants[
-                                        localVariant
+                                    localVariant
                                     ] || "",
                                     themeProps?.styles?.colors[localColor] ||
-                                        "",
+                                    "",
                                     !!error && "border-red-500",
                                 ].join(" "),
                                 localClassNames?.input,

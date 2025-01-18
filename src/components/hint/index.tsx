@@ -1,7 +1,7 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import { useTheme } from "../../context";
-import HintColors from "../../styles/hint/color";
+import { useTheme } from "~context/index";
+import HintColors from "~styles/hint/color";
 import type { IHintProps } from "./types";
 
 export const Hint = React.forwardRef<HTMLDivElement, IHintProps>(

@@ -1,14 +1,14 @@
-import Text from "./text";
-import { Colors } from "../../../types/global";
+import { IIconButtonThemeProps } from "~components/iconButton/types";
+import { TColors } from "~types/global";
 import Filled from "./filled";
 import Outlined from "./outlined";
 import Gradient from "./gradient";
 import OutlinedFilled from "./outlined_filled";
-import { IconButtonThemeProps } from "../../../components/iconButton/types";
+import Text from "./text";
 
 const IconButtonVariants: Record<
-    IconButtonThemeProps["variant"],
-    Record<Colors, Record<string, string>>
+    IIconButtonThemeProps["variant"],
+    Record<TColors, Record<string, string>>
 > = {
     text: Text,
     filled: Filled,

@@ -1,5 +1,5 @@
 import type { ComponentProps, MouseEventHandler } from "react";
-import type { TChipVariants, TColors, TSizes } from "../../types/global";
+import type { TChipVariants, TColors, TSizes } from "~types/global";
 
 export interface IChipThemeProps {
     variant?: TChipVariants;

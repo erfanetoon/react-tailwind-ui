@@ -1,6 +1,6 @@
-import { Colors } from "../../../types/global";
+import { TColors } from "~types/global";
 
-const OutlinedFilled: Record<Colors, Record<string, string>> = {
+const OutlinedFilled: Record<TColors, Record<string, string>> = {
     primary: {
         border: "border border-primary-500",
         color: "text-primary-500",

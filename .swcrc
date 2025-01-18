@@ -4,6 +4,16 @@
         "parser": {
             "syntax": "typescript",
             "tsx": true
+        },
+        "baseUrl": ".",
+        "paths": {
+            "~components/*": ["src/components/*"],
+            "~config/*": ["src/config/*"],
+            "~context": ["src/context/index.tsx"],
+            "~context/*": ["src/context/*"],
+            "~hooks/*": ["src/hooks/*"],
+            "~styles/*": ["src/styles/*"],
+            "~types/*": ["src/types/*"]
         }
     },
     "module": {

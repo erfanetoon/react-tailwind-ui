@@ -1,4 +1,4 @@
-export type TSizes = "xs" | "sm" | "md" | "lg" | "xl";
+export type TSizes = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 
 export type TColors =
     | "primary"
@@ -70,3 +70,5 @@ export type TDropdownPlacements =
     | "endTop";
 
 export type TDropdownTriggers = "click" | "hover";
+
+export type TModalSizes = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "full";

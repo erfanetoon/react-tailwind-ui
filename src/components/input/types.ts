@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import type { TColors, TInputVariants, TSizes } from "../../types/global";
+import type { TColors, TInputVariants, TSizes } from "~types/global";
 
 export interface IInputThemeProps {
     variant?: TInputVariants;

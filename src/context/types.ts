@@ -1,22 +1,20 @@
-import { TColors, TSizes } from "../types/global";
-import { IButtonThemeProps } from "../components/button/types";
-import { IIconButtonThemeProps } from "../components/iconButton/types";
-import { IInputThemeProps } from "../components/input/types";
-import { IChipThemeProps } from "../components/chip/types";
-import { ICodeInputThemeProps } from "../components/codeInput/types";
-import { ITextareaThemeProps } from "../components/textarea/types";
-import { IHintThemeProps } from "../components/hint/types";
-import { ITooltipThemeProps } from "../components/tooltip/types";
-import { IDropdownThemeProps } from "../components/dropdown/types";
+import { TColors, TModalSizes, TSizes } from "~types/global";
+import { IButtonThemeProps } from "~components/button/types";
+import { IIconButtonThemeProps } from "~components/iconButton/types";
+import { IInputThemeProps } from "~components/input/types";
+import { IChipThemeProps } from "~components/chip/types";
+import { ICodeInputThemeProps } from "~components/codeInput/types";
+import { ITextareaThemeProps } from "~components/textarea/types";
+import { IHintThemeProps } from "~components/hint/types";
+import { ITooltipThemeProps } from "~components/tooltip/types";
+import { IDropdownThemeProps } from "~components/dropdown/types";
+import { ISwitchThemeProps } from "~components/switch/types";
+import { IModalThemeProps } from "~components/modal/types";
 
 export interface IThemeContext {
     global?: {
         color?: TColors;
         direction?: "ltr" | "rtl" | null;
-        shadow?: {
-            base: string; // Sample is 'shadow-md'
-            hover: string; // Sample is 'hover:shadow-md'
-        }; // Default is false
         transition?: string; // Default is 'transition-all duration-300'
         borderRadius?: string; // Must be tailwind class for example: rounded, rounded-sm, rounded-md, rounded-lg (default is 'rounded')
     };
@@ -82,8 +80,23 @@ export interface IThemeContext {
             variants?: Partial<Record<IInputThemeProps["variant"], string>>;
         };
     };
+    modal?: {
+        defaultProps?: IModalThemeProps;
+        styles?: {
+            base?: string;
+            sizes?: Partial<Record<TModalSizes, string>>;
+        };
+    };
     passwordInput?: {
         defaultProps?: IInputThemeProps;
+    };
+    switch?: {
+        defaultProps?: ISwitchThemeProps;
+        styles?: {
+            base?: string;
+            colors?: Partial<Record<TColors, string>>;
+            sizes?: Partial<Record<TSizes, string>>;
+        };
     };
     textarea?: {
         defaultProps?: ITextareaThemeProps;

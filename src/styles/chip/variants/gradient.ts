@@ -1,6 +1,6 @@
-import { Colors } from "../../../types/global";
+import { TColors } from "~types/global";
 
-const Gradient: Record<Colors, Record<string, string>> = {
+const Gradient: Record<TColors, Record<string, string>> = {
     primary: {
         backgroud:
             "bg-gradient-to-tr from-primary-600 to-primary-400 border-primary-500",

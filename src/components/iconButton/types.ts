@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import type { TButtonVariants, TColors, TSizes } from "../../types/global";
+import type { TButtonVariants, TColors, TSizes } from "~types/global";
 
 export interface IIconButtonThemeProps {
     variant?: TButtonVariants;

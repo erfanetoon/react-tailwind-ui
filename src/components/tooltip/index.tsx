@@ -10,7 +10,7 @@ import {
     FloatingPortal,
     useMergeRefs,
 } from "@floating-ui/react";
-import { useTheme } from "../../context";
+import { useTheme } from "~context/index";
 import type { ITooltipProps } from "./types";
 
 export const Tooltip = React.forwardRef<HTMLDivElement, ITooltipProps>(

@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "../../context";
+import { useTheme } from "~context/index";
 import ClassComponent from "./component";
 import type { ICodeInputProps } from "./types";
 

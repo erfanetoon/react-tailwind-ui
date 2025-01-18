@@ -8,7 +8,7 @@
   </a>
   
   <a href="https://github.com/erfanetoon/react-tailwind-ui/releases">
-    <img src="https://img.shields.io/badge/version-2.0.1-red.svg" alt="Version" />
+    <img src="https://img.shields.io/badge/version-2.0.2-red.svg" alt="Version" />
   </a>
 </p>
 
@@ -308,11 +308,11 @@ This hook help you to calculate the active window system and the values that ret
 import { useResponsive } from "@erfanetoon/react-tailwind-ui";
 
 const AppComponent = () => {
-    const { isXxs, isXs, isSm, isMd, isLg, isXl, isXxl } = useResponsive();
+    const { is2xs, isXs, isSm, isMd, isLg, isXl, is2xl } = useResponsive();
 
     return;
     <>
-        isXxs: {isXxs}
+        is2xs: {is2xs}
         <br />
         isXs: {isXs}
         <br />
@@ -324,7 +324,7 @@ const AppComponent = () => {
         <br />
         isXl: {isXl}
         <br />
-        isXxl: {isXxl}
+        is2xl: {is2xl}
     </>;
 };
 

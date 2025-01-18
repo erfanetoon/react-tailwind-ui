@@ -2,9 +2,9 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import Ripple from "material-ripple-effects";
 import deepmerge from "deepmerge";
-import { useTheme } from "../../context";
-import ChipSizes from "../../styles/chip/sizes";
-import ChipVariants from "../../styles/chip/variants";
+import { useTheme } from "~context/index";
+import ChipSizes from "~styles/chip/sizes";
+import ChipVariants from "~styles/chip/variants";
 import type { IChipProps } from "./types";
 
 export const Chip = React.forwardRef<HTMLDivElement, IChipProps>(
@@ -57,8 +57,6 @@ export const Chip = React.forwardRef<HTMLDivElement, IChipProps>(
                         Object.values(variantStyles)
                             .map((item) => item)
                             .join(" "),
-                        global?.shadow?.base,
-                        global?.shadow?.hover,
                         themeProps?.styles?.base || "",
                         themeProps?.styles?.sizes[size] || "",
                         themeProps?.styles?.variants[variant] || "",

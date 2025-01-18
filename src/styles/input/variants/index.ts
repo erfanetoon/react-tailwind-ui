@@ -1,6 +1,6 @@
-import { InputThemeProps } from "../../../components/input/types";
+import { IInputThemeProps } from "~components/input/types";
 
-const InputVariants: Record<InputThemeProps["variant"], string> = {
+const InputVariants: Record<IInputThemeProps["variant"], string> = {
     default: "border",
     outlined: "border-b rounded-none",
 };

@@ -4,7 +4,7 @@ import type {
     TColors,
     TInputVariants,
     TSizes,
-} from "../../types/global";
+} from "~types/global";
 
 export interface ICodeInputThemeProps {
     variant?: TInputVariants;

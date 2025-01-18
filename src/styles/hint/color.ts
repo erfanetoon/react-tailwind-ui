@@ -1,6 +1,6 @@
-import { Colors } from "../../types/global";
+import { TColors } from "~types/global";
 
-const HintColors: Record<Colors, Record<string, string>> = {
+const HintColors: Record<TColors, Record<string, string>> = {
     primary: {
         backgorund: "bg-primary-50",
         border: "border-primary-500",

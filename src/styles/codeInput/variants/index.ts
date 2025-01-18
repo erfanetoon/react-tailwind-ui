@@ -1,6 +1,6 @@
-import { CodeInputThemeProps } from "../../../components/codeInput/types";
+import { ICodeInputThemeProps } from "~components/codeInput/types";
 
-const CodeInputVariants: Record<CodeInputThemeProps["variant"], string> = {
+const CodeInputVariants: Record<ICodeInputThemeProps["variant"], string> = {
     default: "border",
     outlined: "border-b rounded-none",
 };
