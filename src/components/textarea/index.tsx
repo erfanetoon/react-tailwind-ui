@@ -1,10 +1,10 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import deepmerge from "deepmerge";
-import { useTheme } from "../../context";
-import TextareaSizes from "../../styles/textarea/sizes";
-import TextareaColors from "../../styles/textarea/colors";
-import TextareaVariants from "../../styles/textarea/variants";
+import { useTheme } from "~context/index";
+import TextareaSizes from "~styles/textarea/sizes";
+import TextareaColors from "~styles/textarea/colors";
+import TextareaVariants from "~styles/textarea/variants";
 import type { ITextareaProps } from "./types";
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, ITextareaProps>(

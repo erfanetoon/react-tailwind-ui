@@ -1,9 +1,9 @@
 import { Config } from "tailwindcss";
 import merge from "deepmerge";
-import shadows from "./config/shadows";
-import colors from "./config/colors";
-import fontSizes from "./config/fontSizes";
-import breakpoints from "./config/breakpoints";
+import shadows from "~config/shadows";
+import colors from "~config/colors";
+import fontSizes from "~config/fontSizes";
+import breakpoints from "~config/breakpoints";
 
 const withTailwind = (tailwindConfig: Config) => {
     return merge(

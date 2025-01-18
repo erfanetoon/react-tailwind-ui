@@ -1,6 +1,6 @@
-import { DropdownThemeProps } from "../../../components/dropdown/types";
+import { IDropdownThemeProps } from "~components/dropdown/types";
 
-const DropdownPlacements: Record<DropdownThemeProps["placement"], string> = {
+const DropdownPlacements: Record<IDropdownThemeProps["placement"], string> = {
     bottomStart: "top-full rtl:right-0 rtl:left-auto left-0",
     bottomEnd: "top-full rtl:left-0 rtl:right-auto right-0",
     endBottom: "top-0 left-full rtl:left-auto rtl:right-full",

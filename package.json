@@ -1,14 +1,14 @@
 {
     "name": "@erfanetoon/react-tailwind-ui",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "Tailwindcss Components for React",
     "main": "index.js",
     "types": "index.d.ts",
     "scripts": {
         "build:cjs": "swc ./src -d ./dist --config-file .swcrc",
-        "move:cjs": "mv ./dist/src/* ./dist/",
-        "build:dts": "tsc --declaration --declarationMap --emitDeclarationOnly",
-        "build": "rm -rf ./dist && npm run build:cjs && npm run move:cjs && npm run build:dts",
+        "move:cjs": "cp -al ./dist/src/* ./dist && rm -rf ./dist/src",
+        "build:dts": "tsc -p tsconfig.json && tsc-alias",
+        "build": "rm -rf ./dist && npm run build:dts && npm run build:cjs && npm run move:cjs",
         "pre:publish": "cp ./package.json ./dist && cp ./README.md ./dist",
         "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
         "prettier:check": "prettier -c ."
@@ -20,7 +20,7 @@
     "author": "erfanetoon",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/erfanetoon/react-tailwindnpm -ui/issues"
+        "url": "https://github.com/erfanetoon/react-tailwind-ui/issues"
     },
     "homepage": "https://github.com/erfanetoon/react-tailwind-ui#readme",
     "peerDependencies": {
@@ -68,7 +68,17 @@
         "react-responsive": "^10.0.0",
         "tailwind-merge": "^2.5.4",
         "tailwindcss": "^3.4.16",
+        "tsc-alias": "^1.8.10",
+        "tsconfig-paths": "^4.2.0",
         "typescript": "^5.6.3"
+    },
+    "_moduleAliases": {
+        "~components": "src/components",
+        "~config": "src/config",
+        "~context": "src/context",
+        "~hooks": "src/hooks",
+        "~styles": "src/styles",
+        "~types": "src/types"
     },
     "keywords": [
         "tailwind",

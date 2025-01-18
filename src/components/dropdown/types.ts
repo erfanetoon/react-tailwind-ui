@@ -4,7 +4,7 @@ import type {
     TDropdownTriggers,
     TDropdownPlacements,
     TSizes,
-} from "../../types/global";
+} from "~types/global";
 
 export interface IDropdownThemeProps {
     size?: TSizes;

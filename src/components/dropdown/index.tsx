@@ -1,10 +1,10 @@
 import React, { Fragment, MouseEvent, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import deepmerge from "deepmerge";
-import { useTheme } from "../../context";
-import DropdownPlacements from "../../styles/dropdown/placements";
-import DropdownSizes from "../../styles/dropdown/sizes";
-import DropdownColors from "../../styles/dropdown/colors";
+import { useTheme } from "~context/index";
+import DropdownPlacements from "~styles/dropdown/placements";
+import DropdownSizes from "~styles/dropdown/sizes";
+import DropdownColors from "~styles/dropdown/colors";
 import type { IDropdownProps } from "./types";
 
 export const Dropdown = React.forwardRef<HTMLDivElement, IDropdownProps>(

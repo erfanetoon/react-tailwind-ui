@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
-import Input from "../input";
-import { useTheme } from "../../context";
+import Input from "~components/input";
+import { useTheme } from "~context/index";
 import deepmerge from "deepmerge";
 import { IPasswordInputProps } from "./types";
 

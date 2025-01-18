@@ -1,6 +1,6 @@
-import { TextareaThemeProps } from "../../../components/textarea/types";
+import { ITextareaThemeProps } from "~components/textarea/types";
 
-const TextareaVariants: Record<TextareaThemeProps["variant"], string> = {
+const TextareaVariants: Record<ITextareaThemeProps["variant"], string> = {
     default: "border",
     outlined: "border-b rounded-none",
 };

@@ -1,10 +1,10 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import deepmerge from "deepmerge";
-import { useTheme } from "../../context";
-import InputSizes from "../../styles/input/sizes";
-import InputColors from "../../styles/input/colors";
-import InputVariants from "../../styles/input/variants";
+import { useTheme } from "~context/index";
+import InputSizes from "~styles/input/sizes";
+import InputColors from "~styles/input/colors";
+import InputVariants from "~styles/input/variants";
 import type { IInputProps } from "./types";
 
 export const Input = React.forwardRef<HTMLInputElement, IInputProps>(

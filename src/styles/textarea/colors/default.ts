@@ -1,6 +1,6 @@
-import { Colors } from "../../../types/global";
+import { TColors } from "~types/global";
 
-const Default: Record<Colors, Record<string, string>> = {
+const Default: Record<TColors, Record<string, string>> = {
     primary: {
         backgorund: "bg-white",
         border: "border-gray-300",

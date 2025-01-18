@@ -1,11 +1,11 @@
-import { TextareaThemeProps } from "../../../components/textarea/types";
-import { Colors } from "../../../types/global";
+import { ITextareaThemeProps } from "~components/textarea/types";
+import { TColors } from "~types/global";
 import Default from "./default";
 import Outlined from "./outlined";
 
 const TextareaColors: Record<
-    TextareaThemeProps["variant"],
-    Record<Colors, Record<string, string>>
+    ITextareaThemeProps["variant"],
+    Record<TColors, Record<string, string>>
 > = {
     default: Default,
     outlined: Outlined,

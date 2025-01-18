@@ -6,9 +6,9 @@ export const useResponsive = () => {
     const isMd = useMediaQuery({ query: "(min-width: 768px)" });
     const isLg = useMediaQuery({ query: "(min-width: 1024px)" });
     const isXl = useMediaQuery({ query: "(min-width: 1280px)" });
-    const isXxl = useMediaQuery({ query: "(min-width: 1536px)" });
+    const is2xl = useMediaQuery({ query: "(min-width: 1536px)" });
 
-    return { isXxs: !isXs, isXs, isSm, isMd, isLg, isXl, isXxl };
+    return { is2xs: !isXs, isXs, isSm, isMd, isLg, isXl, is2xl };
 };
 
 export default useResponsive;

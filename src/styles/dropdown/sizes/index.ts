@@ -1,6 +1,6 @@
-import { Sizes } from "../../../types/global";
+import { TSizes } from "~types/global";
 
-const DropdownSizes: Record<Sizes, { target: string; item: string }> = {
+const DropdownSizes: Record<TSizes, { target: string; item: string }> = {
     xs: {
         target: "text-xs py-3.5 h-[1.875rem]",
         item: "text-xs py-2 px-2 h-[1.875rem]",
@@ -20,6 +20,10 @@ const DropdownSizes: Record<Sizes, { target: string; item: string }> = {
     xl: {
         target: "text-lg py-3.5 h-[1.875rem]",
         item: "text-lg py-3.5 px-6 h-[3.375rem]",
+    },
+    "2xl": {
+        target: "text-lg py-4 h-[1.875rem]",
+        item: "text-lg py-4 px-6 h-[3.875rem]",
     },
 };
 

@@ -2,9 +2,9 @@ import React from "react";
 import Ripple from "material-ripple-effects";
 import deepmerge from "deepmerge";
 import { twMerge } from "tailwind-merge";
-import { useTheme } from "../../context";
-import ButtonSizes from "../../styles/button/sizes";
-import ButtonVariants from "../../styles/button/variants";
+import { useTheme } from "~context/index";
+import ButtonSizes from "~styles/button/sizes";
+import ButtonVariants from "~styles/button/variants";
 import type { IButtonProps } from "./types";
 
 export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
@@ -58,8 +58,6 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
                         Object.values(variantStyles)
                             .map((item) => item)
                             .join(" "),
-                        global?.shadow?.base,
-                        global?.shadow?.hover,
                         themeProps?.styles?.base || "",
                         themeProps?.styles?.sizes[size] || "",
                         themeProps?.styles?.variants[variant] || "",
